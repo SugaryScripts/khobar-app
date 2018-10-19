@@ -31,6 +31,8 @@ android {
             //buildConfigField "String", "BASE_URL", "\"https://info-madiun.firebaseapp.com/\""
         }
     }
+    dataBinding {
+        enabled = true
     }
 }
 
