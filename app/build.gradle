@@ -1,14 +1,10 @@
 apply plugin: 'com.android.application'
-
 apply plugin: 'kotlin-android'
-
 apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "id.web.muhammadibrahim.myindago"
-        minSdkVersion 16
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -19,6 +15,22 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+    flavorDimensions "default"
+    productFlavors {
+        development {
+            applicationId "id.web.muhammadibrahim.myindagodev"
+            minSdkVersion 22
+            resValue "string", "app_name", "My Indago"
+            //buildConfigField "String", "BASE_URL", "\"http:192.168.1.3:1000/\""
+        }
+        production {
+            applicationId "id.web.muhammadibrahim.myindago"
+            minSdkVersion 16
+            resValue "string", "app_name", "My Indago"
+            //buildConfigField "String", "BASE_URL", "\"https://info-madiun.firebaseapp.com/\""
+        }
+    }
     }
 }
 
