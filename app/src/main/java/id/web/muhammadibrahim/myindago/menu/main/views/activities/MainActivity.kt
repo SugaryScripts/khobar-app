@@ -1,8 +1,9 @@
-package id.web.muhammadibrahim.myindago.menu.home.views
+package id.web.muhammadibrahim.myindago.menu.main.views.activities
 
 import android.databinding.DataBindingUtil
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.design.widget.BottomNavigationView
 import id.web.muhammadibrahim.myindago.R
 import id.web.muhammadibrahim.myindago.databinding.ActivityMainBinding
 
