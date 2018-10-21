@@ -36,6 +36,13 @@ android {
         enabled = true
     }
 }
+tasks.whenTaskAdded { task ->
+    if (task.name == "assembleDevelopmentDebug" || task.name == "generateDevelopmentDebugSources") {
+        task.doLast {
+            ['paplay', '/usr/share/sounds/freedesktop/stereo/complete.oga'].execute()
+        }
+    }
+}
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
