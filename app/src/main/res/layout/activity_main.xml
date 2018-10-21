@@ -2,26 +2,27 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        tools:context=".menu.home.views.MainActivity">
+        tools:context=".menu.main.views.activities.MainActivity">
+    <data>
+        <variable
+            name="view_model"
+            type="id.web.muhammadibrahim.myindago.menu.main.viewmodels.MainViewModel"/>
+    </data>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <android.support.v4.widget.SwipeRefreshLayout
-            android:id="@+id/swipe_MAIN"
+        <FrameLayout
+            android:id="@+id/fl_content_MAIN"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-            <android.support.v4.widget.NestedScrollView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                
-            </android.support.v4.widget.NestedScrollView>
-        </android.support.v4.widget.SwipeRefreshLayout>
+            android:layout_height="match_parent"
+            android:layout_above="@id/navigation">
+        </FrameLayout>
         <android.support.design.widget.BottomNavigationView
-                android:id="@+id/navigation"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:background="?android:attr/windowBackground"
-                app:menu="@menu/bottom_navigation" />
+            android:id="@+id/navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="?android:attr/windowBackground"
+            app:menu="@menu/bottom_navigation" />
     </RelativeLayout>
 </layout>
