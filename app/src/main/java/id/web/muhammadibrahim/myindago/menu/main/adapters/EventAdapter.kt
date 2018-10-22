@@ -3,6 +3,7 @@ package id.web.muhammadibrahim.myindago.menu.main.adapters
 import android.databinding.DataBindingUtil
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import id.web.muhammadibrahim.myindago.R
 import id.web.muhammadibrahim.myindago.databinding.ItemEventHomeBinding
@@ -17,6 +18,7 @@ class EventAdapter(private val eventClickListener: EventClickListener):
     inner class EventViewHolder(private val bindings: ItemEventHomeBinding) : RecyclerView.ViewHolder(bindings.root) {
         fun bind(item: EventModel, clickListener: EventClickListener) = with(bindings) {
             val binds = ItemEventViewModel(item)
+            if (adapterPosition > 4) bindings.root.visibility = View.GONE
             bindings.itemEvent = binds
             bindings.executePendingBindings()
 
@@ -36,10 +38,8 @@ class EventAdapter(private val eventClickListener: EventClickListener):
     override fun getItemCount() = dataset.size
 
     fun setEvents(eventModel: MutableList<EventModel>?) {
-        dataset.apply {
-            clear()
-            addAll(eventModel!!)
-        }
+        dataset.clear()
+        for (i in 0..4) dataset.add(eventModel!![i])
         notifyDataSetChanged()
     }
 }
