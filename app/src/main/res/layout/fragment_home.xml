@@ -27,7 +27,14 @@
                     android:id="@+id/include_event_fragHOME"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
                     layout="@layout/layout_home_event"/>
+
+                <include
+                    android:id="@+id/include_news_fragHOME"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    layout="@layout/layout_home_news"/>
 
             </LinearLayout>
 

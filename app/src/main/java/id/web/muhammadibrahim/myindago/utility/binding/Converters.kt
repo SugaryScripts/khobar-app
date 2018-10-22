@@ -3,11 +3,13 @@ package id.web.muhammadibrahim.myindago.utility.binding
 import android.animation.Animator
 import android.databinding.BindingAdapter
 import android.support.v7.widget.AppCompatImageView
+import android.support.v7.widget.AppCompatTextView
 import android.view.View
 import com.bumptech.glide.GenericTransitionOptions
 import com.bumptech.glide.load.resource.bitmap.CircleCrop
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.request.RequestOptions
+import id.web.muhammadibrahim.myindago.R
 import id.web.muhammadibrahim.myindago.data.AppConstants
 import id.web.muhammadibrahim.myindago.utility.glide.GlideApp
 
@@ -22,6 +24,18 @@ class Converters {
                 .apply(RequestOptions.bitmapTransform(RoundedCorners(10)))
                 .transition(GenericTransitionOptions.with(android.R.anim.fade_in))
                 .into(imageView)
+        }
+
+        @JvmStatic
+        @BindingAdapter("loadBackgroundCategory")
+        fun loadBackgroundCategory(textView: AppCompatTextView, category: String) {
+            var background: Int = R.drawable.bg_category_politic_tv
+            when (category){
+                "Politic" -> background =  R.drawable.bg_category_politic_tv
+                "Education" -> background =  R.drawable.bg_category_education_tv
+                "Economic" -> background = R.drawable.bg_category_economic_tv
+            }
+            textView.background = textView.context.resources.getDrawable(background)
         }
 
         @JvmStatic
