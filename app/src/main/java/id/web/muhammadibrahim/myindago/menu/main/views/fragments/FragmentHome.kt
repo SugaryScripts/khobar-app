@@ -14,13 +14,18 @@ import android.widget.Toast
 
 import id.web.muhammadibrahim.myindago.R
 import id.web.muhammadibrahim.myindago.databinding.FragmentHomeBinding
+import id.web.muhammadibrahim.myindago.databinding.LayoutHomeNewsBinding
 import id.web.muhammadibrahim.myindago.menu.main.adapters.EventAdapter
+import id.web.muhammadibrahim.myindago.menu.main.adapters.NewsAdapter
 import id.web.muhammadibrahim.myindago.menu.main.interfaces.EventClickListener
+import id.web.muhammadibrahim.myindago.menu.main.interfaces.NewsClickListener
 import id.web.muhammadibrahim.myindago.menu.main.models.EventModel
+import id.web.muhammadibrahim.myindago.menu.main.models.NewsModel
 import id.web.muhammadibrahim.myindago.menu.main.viewmodels.FragmentHomeViewModel
+import kotlinx.android.synthetic.main.item_news_home.view.*
 import kotlinx.android.synthetic.main.layout_home_info.view.*
 
-class FragmentHome : Fragment(), EventClickListener {
+class FragmentHome : Fragment(), EventClickListener, NewsClickListener {
 
     companion object {
         fun newInstance() = FragmentHome()
@@ -29,6 +34,7 @@ class FragmentHome : Fragment(), EventClickListener {
     private lateinit var binding: FragmentHomeBinding
     private lateinit var viewModel: FragmentHomeViewModel
     private lateinit var eventAdapter: EventAdapter
+    private lateinit var newsAdapter: NewsAdapter
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false)
@@ -37,10 +43,12 @@ class FragmentHome : Fragment(), EventClickListener {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        eventAdapter = EventAdapter(this)
-        binding.includeEventFragHOME.rvEventFragHOME
         viewModel = ViewModelProviders.of(this).get(FragmentHomeViewModel::class.java)
         // TODO: Use the ViewModel
+
+        eventAdapter = EventAdapter(this)
+        newsAdapter = NewsAdapter(this)
+
         viewModel.eventModel.observe(this, Observer {
             eventAdapter.setEvents(it)
         })
@@ -49,9 +57,22 @@ class FragmentHome : Fragment(), EventClickListener {
             layoutManager = LinearLayoutManager(this@FragmentHome.context, LinearLayoutManager.HORIZONTAL, false)
             itemAnimator = DefaultItemAnimator(); hasFixedSize()
         }
+
+        viewModel.newsModel.observe(this, Observer {
+            newsAdapter.setNews(it)
+        })
+        binding.includeNewsFragHOME.rvNewsFragHOME.apply {
+            adapter = newsAdapter
+            layoutManager = LinearLayoutManager(this@FragmentHome.context, LinearLayoutManager.VERTICAL, false)
+            itemAnimator = DefaultItemAnimator(); hasFixedSize()
+        }
     }
 
     override fun onClickEvent(eventModel: EventModel) {
         Toast.makeText(this.context,"clicked ${eventModel.title}",Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onClickNews(newsModel: NewsModel) {
+        Toast.makeText(this.context,"clicked ${newsModel.title}",Toast.LENGTH_SHORT).show()
     }
 }
