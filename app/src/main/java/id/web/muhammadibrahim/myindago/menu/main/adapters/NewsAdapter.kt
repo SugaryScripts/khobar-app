@@ -36,10 +36,8 @@ class NewsAdapter(private val newsClickListener: NewsClickListener):
     override fun getItemCount() = dataset.size
 
     fun setNews(newsModel: MutableList<NewsModel>?) {
-        dataset.apply {
-            clear()
-            addAll(newsModel!!)
-        }
+        dataset.clear()
+        for (i in 0..2) dataset.add(newsModel!![i])
         notifyDataSetChanged()
     }
 }
