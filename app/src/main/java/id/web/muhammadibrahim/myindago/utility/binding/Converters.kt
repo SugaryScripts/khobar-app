@@ -5,6 +5,7 @@ import android.databinding.BindingAdapter
 import android.support.v7.widget.AppCompatImageView
 import android.support.v7.widget.AppCompatTextView
 import android.view.View
+import android.widget.ImageView
 import com.bumptech.glide.GenericTransitionOptions
 import com.bumptech.glide.load.resource.bitmap.CircleCrop
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
@@ -21,7 +22,14 @@ class Converters {
         fun loadImage(imageView: AppCompatImageView, imageUrl: String) {
             GlideApp.with(imageView.context.applicationContext)
                 .load(imageUrl)
-                .apply(RequestOptions.bitmapTransform(RoundedCorners(10)))
+                .transition(GenericTransitionOptions.with(android.R.anim.fade_in))
+                .into(imageView)
+        }
+        @JvmStatic
+        @BindingAdapter("loadImage")
+        fun loadImage(imageView: ImageView, imageUrl: String) {
+            GlideApp.with(imageView.context.applicationContext)
+                .load(imageUrl)
                 .transition(GenericTransitionOptions.with(android.R.anim.fade_in))
                 .into(imageView)
         }
