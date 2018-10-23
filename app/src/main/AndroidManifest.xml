@@ -18,6 +18,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".menu.main.views.activities.MoreNewsActivity"
+            android:label="@string/title_activity_more_news"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>
