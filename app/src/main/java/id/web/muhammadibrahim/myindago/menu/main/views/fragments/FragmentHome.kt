@@ -44,7 +44,14 @@ class FragmentHome : Fragment(), EventClickListener, NewsClickListener {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(FragmentHomeViewModel::class.java)
+        binding.includeEventFragHOME.tvMoreEventFragHOME.setOnClickListener {
+            Toast.makeText(this.context,"clicked more on event",Toast.LENGTH_SHORT).show()
+        }
+        binding.includeNewsFragHOME.tvMoreNewsFragHOME.setOnClickListener {
+            Toast.makeText(this.context,"clicked more on news",Toast.LENGTH_SHORT).show()
+        }
         // TODO: Use the ViewModel
+
 
         eventAdapter = EventAdapter(this)
         newsAdapter = NewsAdapter(this)
