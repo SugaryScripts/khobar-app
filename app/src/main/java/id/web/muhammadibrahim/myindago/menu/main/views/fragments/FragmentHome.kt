@@ -44,18 +44,22 @@ class FragmentHome : Fragment(), EventClickListener, NewsClickListener {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(FragmentHomeViewModel::class.java)
-        binding.includeEventFragHOME.tvMoreEventFragHOME.setOnClickListener {
-            Toast.makeText(this.context,"clicked more on event",Toast.LENGTH_SHORT).show()
-        }
-        binding.includeNewsFragHOME.tvMoreNewsFragHOME.setOnClickListener {
-            Toast.makeText(this.context,"clicked more on news",Toast.LENGTH_SHORT).show()
-        }
-        // TODO: Use the ViewModel
 
+        setupRecyclerView()
+        setupClickedMore()
+    }
 
+    override fun onClickEvent(eventModel: EventModel) {
+        Toast.makeText(this.context,"clicked ${eventModel.title}",Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onClickNews(newsModel: NewsModel) {
+        Toast.makeText(this.context,"clicked ${newsModel.title}",Toast.LENGTH_SHORT).show()
+    }
+
+    fun setupRecyclerView() {
+        // setup for Event RecyclerView
         eventAdapter = EventAdapter(this)
-        newsAdapter = NewsAdapter(this)
-
         viewModel.eventModel.observe(this, Observer {
             eventAdapter.setEvents(it)
         })
@@ -65,6 +69,8 @@ class FragmentHome : Fragment(), EventClickListener, NewsClickListener {
             itemAnimator = DefaultItemAnimator(); hasFixedSize()
         }
 
+        // setup for News RecyclerView
+        newsAdapter = NewsAdapter(this)
         viewModel.newsModel.observe(this, Observer {
             newsAdapter.setNews(it)
         })
@@ -75,11 +81,12 @@ class FragmentHome : Fragment(), EventClickListener, NewsClickListener {
         }
     }
 
-    override fun onClickEvent(eventModel: EventModel) {
-        Toast.makeText(this.context,"clicked ${eventModel.title}",Toast.LENGTH_SHORT).show()
-    }
-
-    override fun onClickNews(newsModel: NewsModel) {
-        Toast.makeText(this.context,"clicked ${newsModel.title}",Toast.LENGTH_SHORT).show()
+    fun setupClickedMore() {
+        binding.includeEventFragHOME.tvMoreEventFragHOME.setOnClickListener {
+            Toast.makeText(this.context,"clicked more on event",Toast.LENGTH_SHORT).show()
+        }
+        binding.includeNewsFragHOME.tvMoreNewsFragHOME.setOnClickListener {
+            Toast.makeText(this.context,"clicked more on news",Toast.LENGTH_SHORT).show()
+        }
     }
 }
