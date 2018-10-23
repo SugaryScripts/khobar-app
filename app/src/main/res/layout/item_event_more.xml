@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="viewmodel"
+            type="id.web.muhammadibrahim.myindago.menu.main.viewmodels.ItemEventViewModel"/>
+    </data>
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        app:cardPreventCornerOverlap="false"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp">
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/iv_event_more_ITEM"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:scaleType="centerCrop"
+                bind:loadImage="@{viewmodel.image}"
+                android:src="@drawable/image_placeholder"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:riv_corner_radius_top_left="20dp"
+                app:riv_corner_radius_top_right="20dp"/>
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/tv_title_event_more_ITEM"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginBottom="12dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:minLines="2"
+                android:gravity="center_vertical"
+                android:textColor="@android:color/black"
+                android:text="@{viewmodel.title}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/btn_show_event_more_ITEM"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_event_more_ITEM" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/btn_show_event_more_ITEM"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_button_show"
+                android:layout_marginEnd="12dp"
+                android:paddingBottom="5dp"
+                android:paddingTop="5dp"
+                android:paddingEnd="8dp"
+                android:paddingRight="8dp"
+                android:paddingStart="8dp"
+                android:paddingLeft="8dp"
+                android:textSize="10sp"
+                android:text="Show"
+                android:textColor="#007aff"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_title_event_more_ITEM"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_title_event_more_ITEM"
+                app:layout_constraintVertical_bias="0.51" />
+        </android.support.constraint.ConstraintLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+</layout>
