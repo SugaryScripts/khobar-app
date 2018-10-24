@@ -85,7 +85,7 @@ class FragmentHome : Fragment(), EventClickListener, NewsClickListener {
 
     fun setupClickedMore() {
         binding.includeEventFragHOME.tvMoreEventFragHOME.setOnClickListener {
-            startActivity(Intent(this.context, MoreEventActivity::class.java))
+
         }
         binding.includeNewsFragHOME.tvMoreNewsFragHOME.setOnClickListener {
             startActivity(Intent(this.context, MoreNewsActivity::class.java))
