@@ -42,9 +42,6 @@ class MoreNewsActivity : AppCompatActivity(), NewsClickListener {
             binding.contentMORENEWS.tvTitleMoreNews.text = it[0].title
             binding.contentMORENEWS.tvDateMoreNews.text = it[0].date
             adapterNews.setNews(it)
-            it.let {
-                it[1]
-            } ?: adapterNews.setNews(it)
         })
     }
 

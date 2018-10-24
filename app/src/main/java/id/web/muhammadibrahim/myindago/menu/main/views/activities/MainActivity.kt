@@ -37,11 +37,11 @@ class MainActivity : AppCompatActivity() {
                     viewmodel.loadFragment(FragmentHome())
                     return@OnNavigationItemSelectedListener true
                 }
-                R.id.navigation_exclusive -> {
+                R.id.navigation_event -> {
                     viewmodel.loadFragment(FragmentExclusive())
                     return@OnNavigationItemSelectedListener true
                 }
-                R.id.navigation_profile -> {
+                R.id.navigation_news -> {
                     viewmodel.loadFragment(FragmentProfile())
                     return@OnNavigationItemSelectedListener true
                 }
