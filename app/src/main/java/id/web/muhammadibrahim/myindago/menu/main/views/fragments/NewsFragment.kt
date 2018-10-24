@@ -6,28 +6,28 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import id.web.muhammadibrahim.myindago.menu.main.viewmodels.NewsViewModel
 
 import id.web.muhammadibrahim.myindago.R
-import id.web.muhammadibrahim.myindago.menu.main.viewmodels.FragmentExclusiveViewModel
 
-class FragmentExclusive : Fragment() {
+class NewsFragment : Fragment() {
 
     companion object {
-        fun newInstance() = FragmentExclusive()
+        fun newInstance() = NewsFragment()
     }
 
-    private lateinit var viewModel: FragmentExclusiveViewModel
+    private lateinit var viewModel: NewsViewModel
 
     override fun onCreateView(
-            inflater: LayoutInflater, container: ViewGroup?,
-            savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_exclusive, container, false)
+        return inflater.inflate(R.layout.fragment_news, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(FragmentExclusiveViewModel::class.java)
+        viewModel = ViewModelProviders.of(this).get(NewsViewModel::class.java)
         // TODO: Use the ViewModel
     }
 

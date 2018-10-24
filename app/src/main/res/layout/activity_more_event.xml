@@ -21,9 +21,9 @@
 
         </android.support.design.widget.AppBarLayout>
 
-        <include
+        <!--<include
             android:id="@+id/content_MORE_EVENT"
-            layout="@layout/content_more_event" />
+            layout="@layout/content_more_event" />-->
 
     </android.support.design.widget.CoordinatorLayout>
 </layout>

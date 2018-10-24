@@ -21,8 +21,8 @@
 
         </android.support.design.widget.AppBarLayout>
 
-        <include android:id="@+id/content_MORE_NEWS"
-            layout="@layout/content_more_news" />
+        <!--<include android:id="@+id/content_MORE_NEWS"
+            layout="@layout/content_more_news" />-->
 
     </android.support.design.widget.CoordinatorLayout>
 </layout>

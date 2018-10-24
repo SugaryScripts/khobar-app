@@ -7,9 +7,9 @@ import android.support.design.widget.BottomNavigationView
 import id.web.muhammadibrahim.myindago.R
 import id.web.muhammadibrahim.myindago.databinding.ActivityMainBinding
 import id.web.muhammadibrahim.myindago.menu.main.viewmodels.MainViewModel
-import id.web.muhammadibrahim.myindago.menu.main.views.fragments.FragmentExclusive
+import id.web.muhammadibrahim.myindago.menu.main.views.fragments.EventFragment
 import id.web.muhammadibrahim.myindago.menu.main.views.fragments.FragmentHome
-import id.web.muhammadibrahim.myindago.menu.main.views.fragments.FragmentProfile
+import id.web.muhammadibrahim.myindago.menu.main.views.fragments.NewsFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -38,11 +38,11 @@ class MainActivity : AppCompatActivity() {
                     return@OnNavigationItemSelectedListener true
                 }
                 R.id.navigation_event -> {
-                    viewmodel.loadFragment(FragmentExclusive())
+                    viewmodel.loadFragment(EventFragment())
                     return@OnNavigationItemSelectedListener true
                 }
                 R.id.navigation_news -> {
-                    viewmodel.loadFragment(FragmentProfile())
+                    viewmodel.loadFragment(NewsFragment())
                     return@OnNavigationItemSelectedListener true
                 }
             }
