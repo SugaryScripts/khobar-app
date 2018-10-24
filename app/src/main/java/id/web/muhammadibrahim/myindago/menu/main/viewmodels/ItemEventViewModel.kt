@@ -5,6 +5,8 @@ import id.web.muhammadibrahim.myindago.menu.main.models.EventModel
 
 class ItemEventViewModel(eventModel: EventModel){
     var title = ObservableField(eventModel.title)
-    var date = ObservableField(eventModel.date)
     var image = ObservableField(eventModel.img_url)
+    var tgl = ObservableField(eventModel.tgl)
+    var bulan = ObservableField(eventModel.bulan)
+    var duration = ObservableField(eventModel.duration)
 }

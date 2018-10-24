@@ -2,15 +2,22 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <android.support.constraint.ConstraintLayout
-        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:padding="16dp"
+        android:paddingLeft="16dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="11dp"
         android:background="@android:color/white">
 
         <android.support.v7.widget.AppCompatTextView
             android:id="@+id/appCompatTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/event"
+            android:text="Recent Event"
             android:textColor="@android:color/black"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -20,14 +27,13 @@
             android:id="@+id/tv_more_event_fragHOME"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:drawableEnd="@drawable/ic_more"
-            android:drawableRight="@drawable/ic_more"
+            android:drawableEnd="@drawable/ic_right_gray"
+            android:drawableRight="@drawable/ic_right_gray"
             android:gravity="center_vertical"
             android:text="@string/more"
             app:layout_constraintBottom_toBottomOf="@+id/appCompatTextView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/appCompatTextView" />
-        <!--android:onClick="@{() -> more_handler.clickedEventMore()"-->
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/rv_event_fragHOME"

@@ -18,7 +18,6 @@ class EventAdapter(private val eventClickListener: EventClickListener):
     inner class EventViewHolder(private val bindings: ItemEventHomeBinding) : RecyclerView.ViewHolder(bindings.root) {
         fun bind(item: EventModel, clickListener: EventClickListener) = with(bindings) {
             val binds = ItemEventViewModel(item)
-            if (adapterPosition > 4) bindings.root.visibility = View.GONE
             bindings.itemEvent = binds
             bindings.executePendingBindings()
 

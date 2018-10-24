@@ -8,52 +8,92 @@
             name="itemEvent"
             type="id.web.muhammadibrahim.myindago.menu.main.viewmodels.ItemEventViewModel"/>
     </data>
+
     <android.support.constraint.ConstraintLayout
-        android:layout_width="160dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
         android:layout_marginLeft="4dp"
         android:layout_marginEnd="4dp"
         android:layout_marginRight="4dp">
 
-        <android.support.v7.widget.AppCompatImageView
+        <com.makeramen.roundedimageview.RoundedImageView
             android:id="@+id/iv_headimage_event_ITEM_fragHOME"
             android:layout_width="match_parent"
             android:layout_height="85dp"
             android:scaleType="centerCrop"
+            android:src="@drawable/image_placeholder"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/image_placeholder"
-            bind:loadImage="@{itemEvent.image}"/>
+            bind:loadImage="@{itemEvent.image}" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/tv_bulan_event_ITEM_fragHOME"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@{itemEvent.bulan}"
+            android:textColor="#008cca"
+            android:textSize="12sp"
+            tools:text="OKT"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_title_event_ITEM_fragHOME"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_title_event_ITEM_fragHOME" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/tv_tgl_event_ITEM_fragHOME"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{itemEvent.tgl}"
+            android:textColor="#646464"
+            android:textSize="18sp"
+            tools:text="24"
+            app:layout_constraintEnd_toEndOf="@+id/tv_bulan_event_ITEM_fragHOME"
+            app:layout_constraintStart_toStartOf="@+id/tv_bulan_event_ITEM_fragHOME"
+            app:layout_constraintTop_toBottomOf="@+id/tv_bulan_event_ITEM_fragHOME" />
 
         <android.support.v7.widget.AppCompatTextView
             android:id="@+id/tv_title_event_ITEM_fragHOME"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginRight="30dp"
-            android:layout_marginEnd="30dp"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             android:ellipsize="end"
             android:maxLines="1"
-            android:textColor="@android:color/black"
             android:text="@{itemEvent.title}"
+            android:textColor="@android:color/black"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tv_bulan_event_ITEM_fragHOME"
             app:layout_constraintTop_toBottomOf="@+id/iv_headimage_event_ITEM_fragHOME"
             tools:text="asdoifjsadofijsdfoiajsdfoisadjfoasifj" />
 
-        <android.support.v7.widget.AppCompatTextView
-            android:id="@+id/tv_date_event_ITEM_fragHOME"
+        <ImageView
+            android:id="@+id/iv_ic_time_event_ITEM_fragHOME"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{itemEvent.date}"
-            android:textColor="#9D9D9F"
+            android:layout_below="@id/tv_title_event_ITEM_fragHOME"
+            android:layout_alignParentStart="true"
+            android:src="@drawable/ic_time_gray"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_time_event_ITEM_fragHOME"
+            app:layout_constraintStart_toStartOf="@+id/tv_title_event_ITEM_fragHOME"
+            app:layout_constraintTop_toTopOf="@+id/tv_time_event_ITEM_fragHOME" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/tv_time_event_ITEM_fragHOME"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_title_event_ITEM_fragHOME"
+            android:layout_marginStart="9dp"
+            android:layout_marginTop="2dp"
+            android:layout_toEndOf="@id/iv_ic_time_event_ITEM_fragHOME"
+            android:text="@{itemEvent.duration}"
+            android:textColor="#8b8b8b"
             android:textSize="12sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_title_event_ITEM_fragHOME"
-            tools:text="date" />
+            tools:text="08.00 - 12.00"
+            app:layout_constraintStart_toEndOf="@+id/iv_ic_time_event_ITEM_fragHOME"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title_event_ITEM_fragHOME" />
 
     </android.support.constraint.ConstraintLayout>
 </layout>
