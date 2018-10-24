@@ -33,7 +33,7 @@
             android:id="@+id/tv_bulan_event_ITEM_fragHOME"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="8dp"
             android:text="@{itemEvent.bulan}"
             android:textColor="#008cca"
             android:textSize="12sp"
