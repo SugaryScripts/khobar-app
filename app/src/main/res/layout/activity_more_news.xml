@@ -21,6 +21,21 @@
 
         </android.support.design.widget.AppBarLayout>
 
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/swipe_content_event_more"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="?android:attr/selectableItemBackground"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+            <android.support.v4.widget.NestedScrollView>
+                <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_content_event_more"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="true" />
+            </android.support.v4.widget.NestedScrollView>
+        </android.support.v4.widget.SwipeRefreshLayout>
+
         <!--<include android:id="@+id/content_MORE_NEWS"
             layout="@layout/content_more_news" />-->
 

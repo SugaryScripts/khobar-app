@@ -11,7 +11,7 @@ import id.web.muhammadibrahim.myindago.menu.main.interfaces.EventClickListener
 import id.web.muhammadibrahim.myindago.menu.main.models.EventModel
 import id.web.muhammadibrahim.myindago.menu.main.viewmodels.ItemEventViewModel
 
-class EventAdapter(private val eventClickListener: EventClickListener):
+class EventAdapter(private val eventClickListener: EventClickListener, private val more: Boolean):
         RecyclerView.Adapter<EventAdapter.EventViewHolder>() {
     private val dataset: MutableList<EventModel> = mutableListOf()
 
@@ -38,7 +38,10 @@ class EventAdapter(private val eventClickListener: EventClickListener):
 
     fun setEvents(eventModel: MutableList<EventModel>?) {
         dataset.clear()
-        for (i in 0..4) dataset.add(eventModel!![i])
+        if (more) dataset.apply {
+            clear()
+            addAll(eventModel!!)
+        } else for (i in 0..4) dataset.add(eventModel!![i])
         notifyDataSetChanged()
     }
 }

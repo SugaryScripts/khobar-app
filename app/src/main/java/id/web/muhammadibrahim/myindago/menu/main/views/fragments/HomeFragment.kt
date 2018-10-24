@@ -25,6 +25,7 @@ import id.web.muhammadibrahim.myindago.menu.main.models.NewsModel
 import id.web.muhammadibrahim.myindago.menu.main.viewmodels.FragmentHomeViewModel
 import id.web.muhammadibrahim.myindago.menu.main.views.activities.MoreNewsActivity
 import id.web.muhammadibrahim.myindago.utility.MyDividerItemDecoration
+import id.web.muhammadibrahim.myindago.menu.main.views.activities.MoreEventActivity
 
 class HomeFragment : Fragment(), EventClickListener, NewsClickListener {
 
@@ -60,7 +61,7 @@ class HomeFragment : Fragment(), EventClickListener, NewsClickListener {
 
     fun setupRecyclerView() {
         // setup for Event RecyclerView
-        eventAdapter = EventAdapter(this)
+        eventAdapter = EventAdapter(this, false)
         viewModel.eventModel.observe(this, Observer {
             eventAdapter.setEvents(it)
         })
@@ -85,7 +86,7 @@ class HomeFragment : Fragment(), EventClickListener, NewsClickListener {
 
     fun setupClickedMore() {
         binding.includeEventFragHOME.tvMoreEventFragHOME.setOnClickListener {
-
+            startActivity(Intent(this.context, MoreEventActivity::class.java))
         }
         binding.includeNewsFragHOME.tvMoreNewsFragHOME.setOnClickListener {
             startActivity(Intent(this.context, MoreNewsActivity::class.java))
