@@ -2,6 +2,7 @@ package id.web.muhammadibrahim.myindago.menu.main.views.fragments
 
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
+import android.content.Intent
 import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -22,6 +23,7 @@ import id.web.muhammadibrahim.myindago.menu.main.interfaces.NewsClickListener
 import id.web.muhammadibrahim.myindago.menu.main.models.EventModel
 import id.web.muhammadibrahim.myindago.menu.main.models.NewsModel
 import id.web.muhammadibrahim.myindago.menu.main.viewmodels.FragmentHomeViewModel
+import id.web.muhammadibrahim.myindago.menu.main.views.activities.MoreNewsActivity
 import kotlinx.android.synthetic.main.item_news_home.view.*
 import kotlinx.android.synthetic.main.layout_home_info.view.*
 
@@ -83,10 +85,10 @@ class FragmentHome : Fragment(), EventClickListener, NewsClickListener {
 
     fun setupClickedMore() {
         binding.includeEventFragHOME.tvMoreEventFragHOME.setOnClickListener {
-            Toast.makeText(this.context,"clicked more on event",Toast.LENGTH_SHORT).show()
+
         }
         binding.includeNewsFragHOME.tvMoreNewsFragHOME.setOnClickListener {
-            Toast.makeText(this.context,"clicked more on news",Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this.context, MoreNewsActivity::class.java))
         }
     }
 }
