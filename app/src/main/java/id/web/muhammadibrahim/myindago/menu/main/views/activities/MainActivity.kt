@@ -8,7 +8,7 @@ import id.web.muhammadibrahim.myindago.R
 import id.web.muhammadibrahim.myindago.databinding.ActivityMainBinding
 import id.web.muhammadibrahim.myindago.menu.main.viewmodels.MainViewModel
 import id.web.muhammadibrahim.myindago.menu.main.views.fragments.EventFragment
-import id.web.muhammadibrahim.myindago.menu.main.views.fragments.FragmentHome
+import id.web.muhammadibrahim.myindago.menu.main.views.fragments.HomeFragment
 import id.web.muhammadibrahim.myindago.menu.main.views.fragments.NewsFragment
 
 class MainActivity : AppCompatActivity() {
@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
         binding.navigation.setOnNavigationItemSelectedListener(BottomNavigationView.OnNavigationItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.navigation_home -> {
-                    viewmodel.loadFragment(FragmentHome())
+                    viewmodel.loadFragment(HomeFragment())
                     return@OnNavigationItemSelectedListener true
                 }
                 R.id.navigation_event -> {

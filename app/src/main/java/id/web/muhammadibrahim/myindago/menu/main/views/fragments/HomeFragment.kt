@@ -26,10 +26,10 @@ import id.web.muhammadibrahim.myindago.menu.main.viewmodels.FragmentHomeViewMode
 import id.web.muhammadibrahim.myindago.menu.main.views.activities.MoreNewsActivity
 import id.web.muhammadibrahim.myindago.utility.MyDividerItemDecoration
 
-class FragmentHome : Fragment(), EventClickListener, NewsClickListener {
+class HomeFragment : Fragment(), EventClickListener, NewsClickListener {
 
     companion object {
-        fun newInstance() = FragmentHome()
+        fun newInstance() = HomeFragment()
     }
 
     private lateinit var binding: FragmentHomeBinding
@@ -66,7 +66,7 @@ class FragmentHome : Fragment(), EventClickListener, NewsClickListener {
         })
         binding.includeEventFragHOME.rvEventFragHOME.apply {
             adapter = eventAdapter
-            layoutManager = LinearLayoutManager(this@FragmentHome.context, LinearLayoutManager.HORIZONTAL, false)
+            layoutManager = LinearLayoutManager(this@HomeFragment.context, LinearLayoutManager.HORIZONTAL, false)
             itemAnimator = DefaultItemAnimator(); hasFixedSize()
         }
 
@@ -77,8 +77,8 @@ class FragmentHome : Fragment(), EventClickListener, NewsClickListener {
         })
         binding.includeNewsFragHOME.rvNewsFragHOME.apply {
             adapter = newsAdapter
-            layoutManager = LinearLayoutManager(this@FragmentHome.context, LinearLayoutManager.VERTICAL, false)
-            addItemDecoration(MyDividerItemDecoration(this@FragmentHome.context, DividerItemDecoration.VERTICAL, 0))
+            layoutManager = LinearLayoutManager(this@HomeFragment.context, LinearLayoutManager.VERTICAL, false)
+            addItemDecoration(MyDividerItemDecoration(this@HomeFragment.context, DividerItemDecoration.VERTICAL, 0))
             itemAnimator = DefaultItemAnimator(); hasFixedSize()
         }
     }

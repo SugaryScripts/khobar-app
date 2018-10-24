@@ -1,14 +1,13 @@
 package id.web.muhammadibrahim.myindago.menu.main.viewmodels
 
-import android.app.Activity
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
-import id.web.muhammadibrahim.myindago.menu.main.views.fragments.FragmentHome
+import id.web.muhammadibrahim.myindago.menu.main.views.fragments.HomeFragment
 
 class MainViewModel(private val fragmentManager: FragmentManager, private val frame_containter: Int) {
 
     init {
-        loadFragment(FragmentHome())
+        loadFragment(HomeFragment())
     }
 
     fun loadFragment(fragment: Fragment) {
