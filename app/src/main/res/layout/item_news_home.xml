@@ -9,18 +9,19 @@
     <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="4dp"
-        android:paddingBottom="4dp">
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp">
 
-        <android.support.v7.widget.AppCompatImageView
+        <com.makeramen.roundedimageview.RoundedImageView
             android:id="@+id/iv_headimage_news_ITEM_fragHOME"
-            android:layout_width="107dp"
-            android:layout_height="89dp"
+            android:layout_width="102dp"
+            android:layout_height="102dp"
             android:scaleType="centerCrop"
+            app:riv_corner_radius="10dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:loadImage="@{newsItem.image}"
-            app:srcCompat="@drawable/image_placeholder" />
+            android:src="@drawable/image_placeholder" />
 
         <android.support.v7.widget.AppCompatTextView
             android:id="@+id/tv_category_news_ITEM_fragHOME"
@@ -33,7 +34,7 @@
             android:paddingStart="3dp"
             app:loadBackgroundCategory="@{newsItem.category}"
             android:text="@{newsItem.category}"
-            android:textSize="12sp"
+            android:textSize="10sp"
             android:textColor="@android:color/white"
             app:layout_constraintStart_toEndOf="@+id/iv_headimage_news_ITEM_fragHOME"
             app:layout_constraintTop_toTopOf="parent" />
@@ -48,6 +49,9 @@
             android:ellipsize="end"
             android:maxLines="2"
             android:text="@{newsItem.title}"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            tools:text="UNIDA Gontor signs MoU with Khazar University, And become Stick Blaze"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/iv_headimage_news_ITEM_fragHOME"
             app:layout_constraintTop_toBottomOf="@+id/tv_category_news_ITEM_fragHOME" />
@@ -59,7 +63,9 @@
             android:layout_marginStart="8dp"
             android:layout_marginBottom="4dp"
             android:text="@{newsItem.date}"
-            android:textSize="12sp"
+            android:textColor="#646464"
+            android:textSize="14sp"
+            tools:text="21 September 2018"
             app:layout_constraintBottom_toBottomOf="@+id/iv_headimage_news_ITEM_fragHOME"
             app:layout_constraintStart_toEndOf="@+id/iv_headimage_news_ITEM_fragHOME" />
 

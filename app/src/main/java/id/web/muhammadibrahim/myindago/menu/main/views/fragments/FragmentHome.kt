@@ -7,6 +7,7 @@ import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.DefaultItemAnimator
+import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
@@ -15,7 +16,6 @@ import android.widget.Toast
 
 import id.web.muhammadibrahim.myindago.R
 import id.web.muhammadibrahim.myindago.databinding.FragmentHomeBinding
-import id.web.muhammadibrahim.myindago.databinding.LayoutHomeNewsBinding
 import id.web.muhammadibrahim.myindago.menu.main.adapters.EventAdapter
 import id.web.muhammadibrahim.myindago.menu.main.adapters.NewsAdapter
 import id.web.muhammadibrahim.myindago.menu.main.interfaces.EventClickListener
@@ -24,8 +24,7 @@ import id.web.muhammadibrahim.myindago.menu.main.models.EventModel
 import id.web.muhammadibrahim.myindago.menu.main.models.NewsModel
 import id.web.muhammadibrahim.myindago.menu.main.viewmodels.FragmentHomeViewModel
 import id.web.muhammadibrahim.myindago.menu.main.views.activities.MoreNewsActivity
-import kotlinx.android.synthetic.main.item_news_home.view.*
-import kotlinx.android.synthetic.main.layout_home_info.view.*
+import id.web.muhammadibrahim.myindago.utility.MyDividerItemDecoration
 
 class FragmentHome : Fragment(), EventClickListener, NewsClickListener {
 
@@ -79,6 +78,7 @@ class FragmentHome : Fragment(), EventClickListener, NewsClickListener {
         binding.includeNewsFragHOME.rvNewsFragHOME.apply {
             adapter = newsAdapter
             layoutManager = LinearLayoutManager(this@FragmentHome.context, LinearLayoutManager.VERTICAL, false)
+            addItemDecoration(MyDividerItemDecoration(this@FragmentHome.context, DividerItemDecoration.VERTICAL, 0))
             itemAnimator = DefaultItemAnimator(); hasFixedSize()
         }
     }
