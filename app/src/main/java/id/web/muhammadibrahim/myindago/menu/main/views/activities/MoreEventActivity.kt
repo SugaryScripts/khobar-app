@@ -38,6 +38,10 @@ class MoreEventActivity : AppCompatActivity(), EventClickListener {
 
     fun setupToolbar() {
         setSupportActionBar(binding.toolbar)
+        supportActionBar!!.apply {
+            setDisplayShowTitleEnabled(true)
+            setDisplayShowTitleEnabled(false)
+        }
     }
 
     fun setupRecycler() {
