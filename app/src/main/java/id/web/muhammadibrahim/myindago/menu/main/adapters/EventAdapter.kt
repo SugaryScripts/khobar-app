@@ -38,10 +38,8 @@ class EventAdapter(private val eventClickListener: EventClickListener, private v
 
     fun setEvents(eventModel: MutableList<EventModel>?) {
         dataset.clear()
-        if (more) dataset.apply {
-            clear()
-            addAll(eventModel!!)
-        } else for (i in 0..4) dataset.add(eventModel!![i])
+        if (more) dataset.addAll(eventModel!!)
+        else for (i in 0..4) dataset.add(eventModel!![i])
         notifyDataSetChanged()
     }
 }

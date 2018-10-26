@@ -10,7 +10,7 @@ import id.web.muhammadibrahim.myindago.menu.main.interfaces.NewsClickListener
 import id.web.muhammadibrahim.myindago.menu.main.models.NewsModel
 import id.web.muhammadibrahim.myindago.menu.main.viewmodels.ItemNewsViewModel
 
-class NewsAdapter(private val newsClickListener: NewsClickListener):
+class NewsAdapter(private val newsClickListener: NewsClickListener, private val more: Boolean):
     RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
     private val dataset: MutableList<NewsModel> = mutableListOf()
 
@@ -37,7 +37,10 @@ class NewsAdapter(private val newsClickListener: NewsClickListener):
 
     fun setNews(newsModel: MutableList<NewsModel>?) {
         dataset.clear()
-        for (i in 0..2) dataset.add(newsModel!![i])
+        if (more)dataset.apply {
+            addAll(newsModel!!)
+            removeAt(0)
+        } else for (i in 0..2) dataset.add(newsModel!![i])
         notifyDataSetChanged()
     }
 }

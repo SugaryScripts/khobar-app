@@ -72,7 +72,7 @@ class HomeFragment : Fragment(), EventClickListener, NewsClickListener {
         }
 
         // setup for News RecyclerView
-        newsAdapter = NewsAdapter(this)
+        newsAdapter = NewsAdapter(this, false)
         viewModel.newsModel.observe(this, Observer {
             newsAdapter.setNews(it)
         })

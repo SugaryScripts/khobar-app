@@ -34,6 +34,9 @@ class MoreEventActivity : AppCompatActivity(), EventClickListener {
     fun setupBinding() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_more_event)
         viewModel = ViewModelProviders.of(this).get(FragmentHomeViewModel::class.java)
+        viewModel.eventModel.observe(this, Observer {
+            adapterEvent.setEvents(it)
+        })
     }
 
     fun setupToolbar() {
@@ -46,9 +49,6 @@ class MoreEventActivity : AppCompatActivity(), EventClickListener {
 
     fun setupRecycler() {
         adapterEvent = EventAdapter(this, true)
-        viewModel.eventModel.observe(this, Observer {
-            adapterEvent.setEvents(it)
-        })
         binding.rvContentEventMore.apply {
             adapter = adapterEvent
             layoutManager = LinearLayoutManager(this.context, LinearLayoutManager.VERTICAL, false)
