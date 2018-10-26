@@ -57,6 +57,6 @@ class MoreEventActivity : AppCompatActivity(), EventClickListener {
     }
 
     override fun onClickEvent(eventModel: EventModel) {
-        Toast.makeText(this,"clicked ${eventModel.title}", Toast.LENGTH_SHORT).show()
+        startActivity(DetailEventActivity.newIntent(this,eventModel))
     }
 }

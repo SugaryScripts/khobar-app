@@ -65,6 +65,6 @@ class MoreNewsActivity : AppCompatActivity(), NewsClickListener {
     }
 
     override fun onClickNews(newsModel: NewsModel) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        startActivity(DetailNewsActivity.newIntent(this,newsModel))
     }
 }

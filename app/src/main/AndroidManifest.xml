@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="id.web.muhammadibrahim.myindago">
+    package="id.web.muhammadibrahim.myindago"
+    android:installLocation="preferExternal">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -25,6 +26,11 @@
         <activity
             android:name=".menu.main.views.activities.MoreEventActivity"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".menu.main.views.activities.DetailEventActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".menu.main.views.activities.DetailNewsActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 </manifest>

@@ -36,6 +36,9 @@ android {
         enabled = true
     }
 }
+androidExtensions { // enabled parcelable
+    experimental = true
+}
 tasks.whenTaskAdded { task ->
     if (task.name == "assembleDevelopmentDebug" || task.name == "generateDevelopmentDebugSources") {
         task.doLast {

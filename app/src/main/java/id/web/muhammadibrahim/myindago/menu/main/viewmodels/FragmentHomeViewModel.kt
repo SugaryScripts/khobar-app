@@ -12,14 +12,14 @@ class FragmentHomeViewModel : ViewModel() {
     init {
         var eventModels: MutableList<EventModel> = mutableListOf()
         for (i in 1..10)
-        eventModels.add(EventModel(0, "Lorem ipsum pidum thir nagh nog pusum $i","https://images.wallpaperscraft.com/image/neko_yanshoujie_room_girl_graphic_hand_headphones_easel_shape_books_food_camera_lamp_chair_decor_94921_1920x1080.jpg","30","OKT","08:00 - 09:00"))
+        eventModels.add(EventModel(i, "Lorem ipsum pidum thir nagh nog pusum $i","https://images.wallpaperscraft.com/image/neko_yanshoujie_room_girl_graphic_hand_headphones_easel_shape_books_food_camera_lamp_chair_decor_94921_1920x1080.jpg","30","OKT","08:00 - 09:00"))
         eventModel.value = eventModels
 
         var newsModels: MutableList<NewsModel> = mutableListOf()
         for (i in 1..10) {
             newsModels.add(
                 NewsModel(
-                    0,
+                    i,
                     "Politic",
                     "Lorem ipsum pidum thir nagh nog pusum $i",
                     "31 September 2000",
@@ -27,14 +27,14 @@ class FragmentHomeViewModel : ViewModel() {
                 )
             )
             newsModels.add(NewsModel(
-                1,
+                i,
                 "Education",
                 "The education of Morrowind are pretty bad and has been writed at book of world record the worst education at all time$i",
                 "31 September 2000",
                 "https://images.wallpaperscraft.com/image/neko_yanshoujie_room_girl_graphic_hand_headphones_easel_shape_books_food_camera_lamp_chair_decor_94921_1920x1080.jpg"
             ))
             newsModels.add(NewsModel(
-                1,
+                i,
                 "Economic",
                 "The education of Morrowind are pretty bad and has been writed at book of world record the worst education at all time$i",
                 "31 September 2000",
