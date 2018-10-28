@@ -6,7 +6,7 @@
     <data>
         <variable
             name="view_model"
-            type="id.web.muhammadibrahim.myindago.menu.main.viewmodels.MainViewModel"/>
+            type="id.web.muhammadibrahim.khobar.menu.main.viewmodels.MainViewModel"/>
     </data>
     <RelativeLayout
         android:layout_width="match_parent"

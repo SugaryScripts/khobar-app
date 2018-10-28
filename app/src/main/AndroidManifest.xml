@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="id.web.muhammadibrahim.myindago"
+    package="id.web.muhammadibrahim.khobar"
     android:installLocation="preferExternal">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -12,7 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".menu.main.views.activities.MainActivity">
+        <activity android:name="id.web.muhammadibrahim.khobar.menu.main.views.activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,16 +20,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".menu.main.views.activities.MoreNewsActivity"
+            android:name="id.web.muhammadibrahim.khobar.menu.main.views.activities.MoreNewsActivity"
             android:label="@string/title_activity_more_news"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".menu.main.views.activities.MoreEventActivity"
+            android:name="id.web.muhammadibrahim.khobar.menu.main.views.activities.MoreEventActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".menu.main.views.activities.DetailEventActivity"
+            android:name="id.web.muhammadibrahim.khobar.menu.main.views.activities.DetailEventActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".menu.main.views.activities.DetailNewsActivity"
+        <activity android:name="id.web.muhammadibrahim.khobar.menu.main.views.activities.DetailNewsActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 

@@ -4,7 +4,7 @@
     <data>
         <variable
             name="newsItem"
-            type="id.web.muhammadibrahim.myindago.menu.main.viewmodels.ItemNewsViewModel"/>
+            type="id.web.muhammadibrahim.khobar.menu.main.viewmodels.ItemNewsViewModel"/>
     </data>
     <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
