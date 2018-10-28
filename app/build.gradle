@@ -5,6 +5,14 @@ apply plugin: 'kotlin-kapt'
 apply plugin: 'deploygate' // deploy gate
 
 android {
+    signingConfigs {
+        config {
+            keyAlias 'khobar'
+            keyPassword 'unida2019'
+            storeFile file('../khobar-key.jks')
+            storePassword 'unida2019'
+        }
+    }
     compileSdkVersion 28
     defaultConfig {
         targetSdkVersion 28
@@ -16,6 +24,7 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
         }
     }
     flavorDimensions "default"
