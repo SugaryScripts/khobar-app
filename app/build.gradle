@@ -75,4 +75,7 @@ dependencies {
     implementation 'jp.wasabeef:glide-transformations:3.3.0'
     implementation 'com.github.siyamed:android-shape-imageview:0.9.3'
     implementation 'com.makeramen:roundedimageview:2.3.0'
+
+    implementation 'com.google.firebase:firebase-core:16.0.4'
 }
+apply plugin: 'com.google.gms.google-services' // firebase or google signin
