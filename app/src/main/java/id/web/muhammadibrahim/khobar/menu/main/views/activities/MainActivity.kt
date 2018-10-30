@@ -73,6 +73,8 @@ class MainActivity : AppCompatActivity(), NewsClickListener, EventClickListener 
         return super.onOptionsItemSelected(item)
     }
 
+    fun getBottomNavigation(): BottomNavigationView = binding.navigation
+
     private fun setupBottomNavigation() {
         binding.navigation.setOnNavigationItemSelectedListener(BottomNavigationView.OnNavigationItemSelectedListener { item ->
             when (item.itemId) {
