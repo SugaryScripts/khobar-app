@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity(), NewsClickListener, EventClickListener 
     }
 
     fun setupToolbar(title: String) {
-        supportActionBar!!.title = title
+        binding.titleToolbar.text = title
         val home = title == "Home"
         if (!home) {
             supportActionBar!!.setHomeAsUpIndicator(R.drawable.ic_left_balck)
