@@ -2,32 +2,27 @@ package id.web.muhammadibrahim.khobar.menu.main.views.fragments
 
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
-import android.content.Intent
 import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.DefaultItemAnimator
 import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 
 import id.web.muhammadibrahim.khobar.R
 import id.web.muhammadibrahim.khobar.databinding.FragmentHomeBinding
 import id.web.muhammadibrahim.khobar.menu.main.adapters.EventAdapter
 import id.web.muhammadibrahim.khobar.menu.main.adapters.NewsAdapter
-import id.web.muhammadibrahim.khobar.menu.main.interfaces.EventClickListener
-import id.web.muhammadibrahim.khobar.menu.main.interfaces.NewsClickListener
-import id.web.muhammadibrahim.khobar.menu.main.models.EventModel
-import id.web.muhammadibrahim.khobar.menu.main.models.NewsModel
 import id.web.muhammadibrahim.khobar.menu.main.viewmodels.FragmentHomeViewModel
-import id.web.muhammadibrahim.khobar.menu.main.views.activities.MoreNewsActivity
 import id.web.muhammadibrahim.khobar.utility.MyDividerItemDecoration
-import id.web.muhammadibrahim.khobar.menu.main.views.activities.MoreEventActivity
+import id.web.muhammadibrahim.khobar.menu.main.views.activities.MainActivity
 
-class HomeFragment : Fragment(), EventClickListener, NewsClickListener {
+
+class HomeFragment : Fragment() {
 
     companion object {
         fun newInstance() = HomeFragment()
@@ -46,22 +41,14 @@ class HomeFragment : Fragment(), EventClickListener, NewsClickListener {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(FragmentHomeViewModel::class.java)
-
-        setupRecyclerView()
+        ((activity as AppCompatActivity) as MainActivity).setupToolbar("Home")
         setupClickedMore()
-    }
-
-    override fun onClickEvent(eventModel: EventModel) {
-        Toast.makeText(this.context,"clicked ${eventModel.title}",Toast.LENGTH_SHORT).show()
-    }
-
-    override fun onClickNews(newsModel: NewsModel) {
-        Toast.makeText(this.context,"clicked ${newsModel.title}",Toast.LENGTH_SHORT).show()
+        setupRecyclerView()
     }
 
     fun setupRecyclerView() {
         // setup for Event RecyclerView
-        eventAdapter = EventAdapter(this, false)
+        eventAdapter = EventAdapter(((activity as AppCompatActivity) as MainActivity), false)
         viewModel.eventModel.observe(this, Observer {
             eventAdapter.setEvents(it)
         })
@@ -72,7 +59,7 @@ class HomeFragment : Fragment(), EventClickListener, NewsClickListener {
         }
 
         // setup for News RecyclerView
-        newsAdapter = NewsAdapter(this, false)
+        newsAdapter = NewsAdapter(((activity as AppCompatActivity) as MainActivity), false)
         viewModel.newsModel.observe(this, Observer {
             newsAdapter.setNews(it)
         })
@@ -84,12 +71,12 @@ class HomeFragment : Fragment(), EventClickListener, NewsClickListener {
         }
     }
 
-    fun setupClickedMore() {
+    private fun setupClickedMore() {
         binding.includeEventFragHOME.tvMoreEventFragHOME.setOnClickListener {
-            startActivity(Intent(this.context, MoreEventActivity::class.java))
+            ((activity as AppCompatActivity) as MainActivity).getBottomNavigation().selectedItemId = R.id.navigation_event
         }
         binding.includeNewsFragHOME.tvMoreNewsFragHOME.setOnClickListener {
-            startActivity(Intent(this.context, MoreNewsActivity::class.java))
+            ((activity as AppCompatActivity) as MainActivity).getBottomNavigation().selectedItemId = R.id.navigation_news
         }
     }
 }
