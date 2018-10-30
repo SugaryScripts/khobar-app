@@ -110,6 +110,7 @@ class MainActivity : AppCompatActivity(), NewsClickListener, EventClickListener 
         } else {
             Log.i("(^_^)", "It is home fragment so it still alive")
             binding.navigation.selectedItemId = R.id.navigation_home
+                if (binding.navigation.visibility == View.GONE) binding.navigation.visibility = View.VISIBLE
         }
     }
 }
