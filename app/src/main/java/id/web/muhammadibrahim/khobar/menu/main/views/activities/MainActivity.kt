@@ -6,12 +6,14 @@ import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import id.web.muhammadibrahim.khobar.R
 import id.web.muhammadibrahim.khobar.databinding.ActivityMainBinding
+import id.web.muhammadibrahim.khobar.menu.main.interfaces.EventClickListener
+import id.web.muhammadibrahim.khobar.menu.main.interfaces.NewsClickListener
 import id.web.muhammadibrahim.khobar.menu.main.viewmodels.MainViewModel
 import id.web.muhammadibrahim.khobar.menu.main.views.fragments.EventFragment
 import id.web.muhammadibrahim.khobar.menu.main.views.fragments.HomeFragment
 import id.web.muhammadibrahim.khobar.menu.main.views.fragments.NewsFragment
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), NewsClickListener, EventClickListener {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var viewmodel: MainViewModel
@@ -30,6 +32,14 @@ class MainActivity : AppCompatActivity() {
         binding.viewModel = viewmodel
     }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.login, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        when (item?.itemId){
+            android.R.id.home -> {
     private fun setupBottomNavigation() {
         binding.navigation.setOnNavigationItemSelectedListener(BottomNavigationView.OnNavigationItemSelectedListener { item ->
             when (item.itemId) {
@@ -49,4 +59,13 @@ class MainActivity : AppCompatActivity() {
             false }
         )
     }
+
+    override fun onClickNews(newsModel: NewsModel) {
+        startActivity(DetailNewsActivity.newIntent(this,newsModel))
+    }
+
+    override fun onClickEvent(eventModel: EventModel) {
+        startActivity(DetailEventActivity.newIntent(this,eventModel))
+    }
+
 }

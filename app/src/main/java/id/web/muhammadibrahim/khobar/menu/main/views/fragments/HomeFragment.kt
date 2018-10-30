@@ -25,7 +25,7 @@ import id.web.muhammadibrahim.khobar.menu.main.models.NewsModel
 import id.web.muhammadibrahim.khobar.menu.main.viewmodels.FragmentHomeViewModel
 import id.web.muhammadibrahim.khobar.menu.main.views.activities.MoreNewsActivity
 import id.web.muhammadibrahim.khobar.utility.MyDividerItemDecoration
-import id.web.muhammadibrahim.khobar.menu.main.views.activities.MoreEventActivity
+import id.web.muhammadibrahim.khobar.menu.main.views.activities.MainActivity
 
 class HomeFragment : Fragment(), EventClickListener, NewsClickListener {
 
@@ -61,7 +61,7 @@ class HomeFragment : Fragment(), EventClickListener, NewsClickListener {
 
     fun setupRecyclerView() {
         // setup for Event RecyclerView
-        eventAdapter = EventAdapter(this, false)
+        eventAdapter = EventAdapter(((activity as AppCompatActivity) as MainActivity), false)
         viewModel.eventModel.observe(this, Observer {
             eventAdapter.setEvents(it)
         })
@@ -72,7 +72,7 @@ class HomeFragment : Fragment(), EventClickListener, NewsClickListener {
         }
 
         // setup for News RecyclerView
-        newsAdapter = NewsAdapter(this, false)
+        newsAdapter = NewsAdapter(((activity as AppCompatActivity) as MainActivity), false)
         viewModel.newsModel.observe(this, Observer {
             newsAdapter.setNews(it)
         })
