@@ -6,7 +6,7 @@
         android:layout_height="match_parent"
         tools:context="id.web.muhammadibrahim.khobar.menu.main.views.fragments.UniversityFragment"
         android:background="#ececec">
-
+        <!-- todo: fix un scrollable on smaller device -->
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
