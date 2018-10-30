@@ -60,6 +60,7 @@ class MainActivity : AppCompatActivity(), NewsClickListener, EventClickListener 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         when (item?.itemId){
             android.R.id.home       -> binding.navigation.selectedItemId = R.id.navigation_home
+            R.id.navigation_profile -> { }// todo: waiting design
         }
         return super.onOptionsItemSelected(item)
     }
