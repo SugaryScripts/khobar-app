@@ -46,7 +46,7 @@ class HomeFragment : Fragment(), EventClickListener, NewsClickListener {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(FragmentHomeViewModel::class.java)
-
+        ((activity as AppCompatActivity) as MainActivity).setupToolbar("Home")
         setupRecyclerView()
         setupClickedMore()
     }

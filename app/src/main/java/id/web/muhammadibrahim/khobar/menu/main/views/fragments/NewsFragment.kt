@@ -49,6 +49,7 @@ class NewsFragment : Fragment() {
             Converters.loadBackgroundCategory(binding.tvDateMoreNews,it[0].category)
             adapterNews.setNews(it)
         })
+        ((activity as AppCompatActivity) as MainActivity).setupToolbar("News")
         setupRecycler()
     }
 

@@ -48,6 +48,7 @@ class EventFragment : Fragment() {
         viewModel.eventModel.observe(this, Observer {
             adapterEvent.setEvents(it)
         })
+        ((activity as AppCompatActivity) as MainActivity).setupToolbar("Event")
         setupRecycler()
     }
 
