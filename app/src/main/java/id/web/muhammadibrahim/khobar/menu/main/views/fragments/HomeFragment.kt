@@ -20,6 +20,7 @@ import id.web.muhammadibrahim.khobar.menu.main.adapters.NewsAdapter
 import id.web.muhammadibrahim.khobar.menu.main.viewmodels.FragmentHomeViewModel
 import id.web.muhammadibrahim.khobar.utility.MyDividerItemDecoration
 import id.web.muhammadibrahim.khobar.menu.main.views.activities.MainActivity
+import kotlinx.android.synthetic.main.layout_home_info.view.*
 
 
 class HomeFragment : Fragment() {
@@ -43,7 +44,7 @@ class HomeFragment : Fragment() {
         viewModel = ViewModelProviders.of(this).get(FragmentHomeViewModel::class.java)
         ((activity as AppCompatActivity) as MainActivity).setupToolbar("Home")
         setupRecyclerView()
-        setupClickedMore()
+        setupClickedView()
     }
 
     fun setupRecyclerView() {
@@ -71,7 +72,8 @@ class HomeFragment : Fragment() {
         }
     }
 
-    private fun setupClickedMore() {
+    private fun setupClickedView() {
+        binding.includeInfoFragHOME.university_info.setOnClickListener { ((activity as AppCompatActivity) as MainActivity).viewmodel.loadFragment(UniversityFragment()) }
         binding.includeEventFragHOME.tvMoreEventFragHOME.setOnClickListener {
             ((activity as AppCompatActivity) as MainActivity).getBottomNavigation().selectedItemId = R.id.navigation_event
         }
