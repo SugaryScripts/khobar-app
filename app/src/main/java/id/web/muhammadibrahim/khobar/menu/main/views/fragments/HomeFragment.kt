@@ -44,7 +44,6 @@ class HomeFragment : Fragment() {
         ((activity as AppCompatActivity) as MainActivity).setupToolbar("Home")
         setupRecyclerView()
         setupClickedMore()
-        setupRecyclerView()
     }
 
     fun setupRecyclerView() {
