@@ -3,26 +3,25 @@ package id.web.muhammadibrahim.khobar.menu.main.views.activities
 import android.databinding.DataBindingUtil
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.design.widget.AppBarLayout
 import android.support.design.widget.BottomNavigationView
-import android.support.v4.app.FragmentManager
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import id.web.muhammadibrahim.khobar.R
 import id.web.muhammadibrahim.khobar.databinding.ActivityMainBinding
+import id.web.muhammadibrahim.khobar.menu.main.adapters.FacultyNDepartmentAdapter
 import id.web.muhammadibrahim.khobar.menu.main.interfaces.EventClickListener
 import id.web.muhammadibrahim.khobar.menu.main.interfaces.NewsClickListener
 import id.web.muhammadibrahim.khobar.menu.main.models.EventModel
+import id.web.muhammadibrahim.khobar.menu.main.models.FacultyNDepartmentModel
 import id.web.muhammadibrahim.khobar.menu.main.models.NewsModel
 import id.web.muhammadibrahim.khobar.menu.main.viewmodels.MainViewModel
 import id.web.muhammadibrahim.khobar.menu.main.views.fragments.EventFragment
 import id.web.muhammadibrahim.khobar.menu.main.views.fragments.HomeFragment
 import id.web.muhammadibrahim.khobar.menu.main.views.fragments.NewsFragment
-import kotlinx.android.synthetic.main.activity_main.view.*
 
-class MainActivity : AppCompatActivity(), NewsClickListener, EventClickListener {
+class MainActivity : AppCompatActivity(), NewsClickListener, EventClickListener, FacultyNDepartmentAdapter.FacultyDepartmentClickListener {
 
     private lateinit var binding: ActivityMainBinding
     lateinit var viewmodel: MainViewModel
@@ -44,14 +43,16 @@ class MainActivity : AppCompatActivity(), NewsClickListener, EventClickListener 
 
     fun setupToolbar(title: String) {
         binding.titleToolbar.text = title
-        val home = title == "Home"
-        if (!home) {
-            supportActionBar!!.setHomeAsUpIndicator(R.drawable.ic_left_balck)
-            binding.searchToolbar.visibility = View.VISIBLE
-        }else binding.searchToolbar.visibility = View.GONE
+        val isHome = title == "Home"
+
+        if (title == "Event" || title == "News") binding.searchToolbar.visibility = View.VISIBLE
+        else binding.searchToolbar.visibility = View.GONE
+
+        if (!isHome) supportActionBar!!.setHomeAsUpIndicator(R.drawable.ic_left_balck)
+
         supportActionBar!!.apply {
-            setDisplayHomeAsUpEnabled(!home)
-            setDisplayShowHomeEnabled(!home)
+            setDisplayHomeAsUpEnabled(!isHome)
+            setDisplayShowHomeEnabled(!isHome)
         }
     }
 
@@ -101,6 +102,10 @@ class MainActivity : AppCompatActivity(), NewsClickListener, EventClickListener 
 
     override fun onClickEvent(eventModel: EventModel) {
         startActivity(DetailEventActivity.newIntent(this,eventModel))
+    }
+
+    override fun onClickFacultyDepartmentItem(model: FacultyNDepartmentModel) {
+        Log.i("(^_^)","Clicked faculty or department item")
     }
 
     override fun onBackPressed() {
