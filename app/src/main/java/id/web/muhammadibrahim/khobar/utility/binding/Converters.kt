@@ -44,6 +44,20 @@ class Converters {
         }
 
         @JvmStatic
+        @BindingAdapter("loadIconFacultyDepartment")
+        fun loadIconFacultyDepartment(imageView: AppCompatImageView, category: String) {
+            when (category){
+                "education" -> imageView.setImageResource(R.drawable.in_education_blue)
+                "ushuluddin" -> imageView.setImageResource(R.drawable.in_ushuluddin_blue)
+                "shariah" -> imageView.setImageResource(R.drawable.ic_shariah_blue)
+                "science" -> imageView.setImageResource(R.drawable.ic_science_blue)
+                "humanities" -> imageView.setImageResource(R.drawable.ic_humanities_blue)
+                "health" -> imageView.setImageResource(R.drawable.ic_health_blue)
+                "economic" -> imageView.setImageResource(R.drawable.ic_economi_blue)
+            }
+        }
+
+        @JvmStatic
         @BindingAdapter("showView")
         fun showView(view: View, hide: Boolean){
             if(hide) {
