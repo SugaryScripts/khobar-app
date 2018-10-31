@@ -9,8 +9,8 @@
     <string name="more">More</string>
 
     <string name="title_menu_home">Home</string>
-    <string name="title_menu_news">Exclusive</string>
-    <string name="title_menu_profile">Profile</string>
+    <string name="title_menu_event">Event</string>
+    <string name="title_menu_news">News</string>
 
     <string name="title_activity_more_event">Event</string>
     <string name="title_activity_more_news">News</string>
