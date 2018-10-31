@@ -73,6 +73,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun setupClickedView() {
+        binding.includeInfoFragHOME.library_info.setOnClickListener { ((activity as AppCompatActivity) as MainActivity).viewmodel.loadFragment(LibraryFragment()) }
         binding.includeInfoFragHOME.department_info.setOnClickListener { ((activity as AppCompatActivity) as MainActivity).viewmodel.loadFragment(DepartmentFragment()) }
         binding.includeInfoFragHOME.faculty_info.setOnClickListener { ((activity as AppCompatActivity) as MainActivity).viewmodel.loadFragment(FacultyFragment()) }
         binding.includeInfoFragHOME.university_info.setOnClickListener { ((activity as AppCompatActivity) as MainActivity).viewmodel.loadFragment(UniversityFragment()) }
