@@ -48,6 +48,7 @@
         </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.CardView
+            android:id="@+id/faculty_info"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginStart="2.75dp"

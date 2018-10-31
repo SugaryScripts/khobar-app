@@ -73,6 +73,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun setupClickedView() {
+        binding.includeInfoFragHOME.faculty_info.setOnClickListener { ((activity as AppCompatActivity) as MainActivity).viewmodel.loadFragment(FacultyFragment()) }
         binding.includeInfoFragHOME.university_info.setOnClickListener { ((activity as AppCompatActivity) as MainActivity).viewmodel.loadFragment(UniversityFragment()) }
         binding.includeEventFragHOME.tvMoreEventFragHOME.setOnClickListener {
             ((activity as AppCompatActivity) as MainActivity).getBottomNavigation().selectedItemId = R.id.navigation_event
