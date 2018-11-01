@@ -82,15 +82,15 @@ class MainActivity : AppCompatActivity(), NewsClickListener, EventClickListener,
         binding.navigation.setOnNavigationItemSelectedListener(BottomNavigationView.OnNavigationItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.navigation_home -> {
-                    viewmodel.loadFragment(HomeFragment())
+                    if (viewmodel.selectedNavigation != "Home") viewmodel.loadFragment(HomeFragment(), "Home")
                     return@OnNavigationItemSelectedListener true
                 }
                 R.id.navigation_event -> {
-                    viewmodel.loadFragment(EventFragment())
+                    if (viewmodel.selectedNavigation != "Event") viewmodel.loadFragment(EventFragment(), "Event")
                     return@OnNavigationItemSelectedListener true
                 }
                 R.id.navigation_news -> {
-                    viewmodel.loadFragment(NewsFragment())
+                    if (viewmodel.selectedNavigation != "News")viewmodel.loadFragment(NewsFragment(), "News")
                     return@OnNavigationItemSelectedListener true
                 }
             }

@@ -73,10 +73,10 @@ class HomeFragment : Fragment() {
     }
 
     private fun setupClickedView() {
-        binding.includeInfoFragHOME.library_info.setOnClickListener { ((activity as AppCompatActivity) as MainActivity).viewmodel.loadFragment(LibraryFragment()) }
-        binding.includeInfoFragHOME.department_info.setOnClickListener { ((activity as AppCompatActivity) as MainActivity).viewmodel.loadFragment(DepartmentFragment()) }
-        binding.includeInfoFragHOME.faculty_info.setOnClickListener { ((activity as AppCompatActivity) as MainActivity).viewmodel.loadFragment(FacultyFragment()) }
-        binding.includeInfoFragHOME.university_info.setOnClickListener { ((activity as AppCompatActivity) as MainActivity).viewmodel.loadFragment(UniversityFragment()) }
+        binding.includeInfoFragHOME.library_info.setOnClickListener { ((activity as AppCompatActivity) as MainActivity).viewmodel.loadFragment(LibraryFragment(),"Library") }
+        binding.includeInfoFragHOME.department_info.setOnClickListener { ((activity as AppCompatActivity) as MainActivity).viewmodel.loadFragment(DepartmentFragment(),"Department") }
+        binding.includeInfoFragHOME.faculty_info.setOnClickListener { ((activity as AppCompatActivity) as MainActivity).viewmodel.loadFragment(FacultyFragment(),"Faculty") }
+        binding.includeInfoFragHOME.university_info.setOnClickListener { ((activity as AppCompatActivity) as MainActivity).viewmodel.loadFragment(UniversityFragment(),"University") }
         binding.includeEventFragHOME.tvMoreEventFragHOME.setOnClickListener {
             ((activity as AppCompatActivity) as MainActivity).getBottomNavigation().selectedItemId = R.id.navigation_event
         }
