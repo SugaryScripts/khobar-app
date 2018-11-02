@@ -7,6 +7,7 @@ import android.graphics.Canvas
 import android.graphics.Rect
 import android.graphics.drawable.Drawable
 import android.support.v7.widget.LinearLayoutManager
+import android.view.View
 
 
 class MyDividerItemDecoration(private val context: Context?, orientation: Int, private val margin: Int) :
@@ -29,8 +30,8 @@ class MyDividerItemDecoration(private val context: Context?, orientation: Int, p
         mOrientation = orientation
     }
 
-    override fun onDrawOver(c: Canvas, parent: RecyclerView) {
-        super.onDrawOver(c, parent)
+    override fun onDrawOver(c: Canvas, parent: RecyclerView, state: RecyclerView.State) {
+        super.onDrawOver(c, parent, state)
         if (mOrientation == VERTICAL_LIST) {
             drawVertical(c, parent)
         } else {
@@ -71,8 +72,8 @@ class MyDividerItemDecoration(private val context: Context?, orientation: Int, p
         }
     }
 
-    override fun getItemOffsets(outRect: Rect, itemPosition: Int, parent: RecyclerView) {
-        super.getItemOffsets(outRect, itemPosition, parent)
+    override fun getItemOffsets(outRect: Rect, view: View, parent: RecyclerView, state: RecyclerView.State) {
+        super.getItemOffsets(outRect, view, parent, state)
         if (mOrientation == VERTICAL_LIST) {
             outRect.set(0, 0, 0, mDivider!!.intrinsicHeight)
         } else {
