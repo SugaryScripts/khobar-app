@@ -1,6 +1,7 @@
 package id.web.muhammadibrahim.khobar.menu.main.views.fragments
 
 import android.content.Context
+import android.content.Intent
 import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -28,6 +29,11 @@ class UniversityFragment : Fragment() {
 
     override fun onAttach(context: Context?) {
         super.onAttach(context)
+        ((activity as AppCompatActivity) as MainActivity).setupToolbar("University")
         ((activity as AppCompatActivity) as MainActivity).getBottomNavigation().visibility = View.GONE
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
     }
 }

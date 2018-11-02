@@ -2,28 +2,19 @@ package id.web.muhammadibrahim.khobar.menu.main.views.fragments
 
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
-import android.content.Context
 import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.DefaultItemAnimator
 import android.support.v7.widget.LinearLayoutManager
-import id.web.muhammadibrahim.khobar.menu.main.viewmodels.EventViewModel
 
 import id.web.muhammadibrahim.khobar.R
 import id.web.muhammadibrahim.khobar.databinding.FragmentEventBinding
 import id.web.muhammadibrahim.khobar.menu.main.adapters.EventAdapter
-import id.web.muhammadibrahim.khobar.menu.main.interfaces.EventClickListener
-import id.web.muhammadibrahim.khobar.menu.main.models.EventModel
 import id.web.muhammadibrahim.khobar.menu.main.viewmodels.FragmentHomeViewModel
 import id.web.muhammadibrahim.khobar.menu.main.views.activities.MainActivity
-import android.support.design.widget.AppBarLayout
-import android.util.Log
 import android.view.*
-import id.web.muhammadibrahim.khobar.R.id.toolbar
-
-
 
 class EventFragment : Fragment() {
 

@@ -5,7 +5,6 @@ import android.arch.lifecycle.ViewModel
 import id.web.muhammadibrahim.khobar.menu.main.models.FacultyNDepartmentModel
 
 class FacultyNDepartmentViewModel : ViewModel() {
-    // TODO: Implement the ViewModel
     var facultyModel: MutableLiveData<MutableList<FacultyNDepartmentModel>> = MutableLiveData()
     var departmentModel: MutableLiveData<MutableList<FacultyNDepartmentModel>> = MutableLiveData()
 
