@@ -13,10 +13,10 @@ import com.crashlytics.android.answers.Answers
 import io.fabric.sdk.android.Fabric
 import id.web.muhammadibrahim.khobar.R
 import id.web.muhammadibrahim.khobar.databinding.ActivityMainBinding
+import id.web.muhammadibrahim.khobar.menu.main.adapters.EventAdapter
 import id.web.muhammadibrahim.khobar.menu.main.adapters.FacultyNDepartmentAdapter
 import id.web.muhammadibrahim.khobar.menu.main.adapters.LibraryAdapter
-import id.web.muhammadibrahim.khobar.menu.main.interfaces.EventClickListener
-import id.web.muhammadibrahim.khobar.menu.main.interfaces.NewsClickListener
+import id.web.muhammadibrahim.khobar.menu.main.adapters.NewsAdapter
 import id.web.muhammadibrahim.khobar.menu.main.models.EventModel
 import id.web.muhammadibrahim.khobar.menu.main.models.FacultyNDepartmentModel
 import id.web.muhammadibrahim.khobar.menu.main.models.LibraryModel
@@ -26,7 +26,7 @@ import id.web.muhammadibrahim.khobar.menu.main.views.fragments.EventFragment
 import id.web.muhammadibrahim.khobar.menu.main.views.fragments.HomeFragment
 import id.web.muhammadibrahim.khobar.menu.main.views.fragments.NewsFragment
 
-class MainActivity : AppCompatActivity(), NewsClickListener, EventClickListener, FacultyNDepartmentAdapter.FacultyDepartmentClickListener, LibraryAdapter.BookClickListener {
+class MainActivity : AppCompatActivity(), NewsAdapter.NewsClickListener, EventAdapter.EventClickListener, FacultyNDepartmentAdapter.FacultyDepartmentClickListener, LibraryAdapter.BookClickListener {
 
     private lateinit var binding: ActivityMainBinding
     lateinit var viewmodel: MainViewModel

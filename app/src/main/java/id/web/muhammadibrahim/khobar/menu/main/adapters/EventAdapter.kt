@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import id.web.muhammadibrahim.khobar.R
 import id.web.muhammadibrahim.khobar.databinding.ItemEventHomeBinding
-import id.web.muhammadibrahim.khobar.menu.main.interfaces.EventClickListener
 import id.web.muhammadibrahim.khobar.menu.main.models.EventModel
 import id.web.muhammadibrahim.khobar.menu.main.viewmodels.ItemEventViewModel
 
@@ -40,5 +39,9 @@ class EventAdapter(private val eventClickListener: EventClickListener, private v
         if (more) dataset.addAll(eventModel!!)
         else for (i in 0..4) dataset.add(eventModel!![i])
         notifyDataSetChanged()
+    }
+
+    interface EventClickListener {
+        fun onClickEvent (eventModel: EventModel)
     }
 }

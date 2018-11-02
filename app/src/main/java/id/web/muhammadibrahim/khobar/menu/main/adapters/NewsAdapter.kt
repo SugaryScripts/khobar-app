@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import id.web.muhammadibrahim.khobar.R
 import id.web.muhammadibrahim.khobar.databinding.ItemNewsHomeBinding
-import id.web.muhammadibrahim.khobar.menu.main.interfaces.NewsClickListener
 import id.web.muhammadibrahim.khobar.menu.main.models.NewsModel
 import id.web.muhammadibrahim.khobar.menu.main.viewmodels.ItemNewsViewModel
 
@@ -42,5 +41,9 @@ class NewsAdapter(private val newsClickListener: NewsClickListener, private val 
             removeAt(0)
         } else for (i in 0..2) dataset.add(newsModel!![i])
         notifyDataSetChanged()
+    }
+
+    interface NewsClickListener {
+        fun onClickNews (newsModel: NewsModel)
     }
 }
