@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:bind="http://schemas.android.com/tools">
     <data>
         <variable
             name="detailNews"
@@ -12,6 +13,7 @@
         android:layout_height="match_parent"
         android:fitsSystemWindows="true">
         <android.support.design.widget.AppBarLayout
+            android:id="@+id/appbar_detail_news"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
@@ -22,8 +24,7 @@
                 android:layout_height="wrap_content"
                 android:fitsSystemWindows="true"
                 app:contentScrim="?attr/colorPrimary"
-                app:expandedTitleMarginEnd="64dp"
-                app:expandedTitleMarginStart="48dp"
+                app:titleEnabled="false"
                 app:layout_scrollFlags="scroll|exitUntilCollapsed"
                 app:title="This is collapsing toolbar">
                 <android.support.v7.widget.AppCompatImageView
@@ -39,7 +40,19 @@
                     android:layout_width="match_parent"
                     android:layout_height="?attr/actionBarSize"
                     app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-                    app:layout_collapseMode="pin"/>
+                    app:layout_collapseMode="pin">
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/title_toolbar_detail_news"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{detailNews.title}"
+                        android:maxLines="1"
+                        android:ellipsize="end"
+                        android:textColor="@android:color/black"
+                        android:layout_gravity="center_horizontal"
+                        android:textSize="24sp"
+                        tools:text="Title Toolbar" />
+                </android.support.v7.widget.Toolbar>
 
             </android.support.design.widget.CollapsingToolbarLayout>
         </android.support.design.widget.AppBarLayout>
@@ -57,7 +70,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="10dp"
                     android:layout_marginEnd="16dp"
                     android:text="@{detailNews.title}"
                     android:textColor="@android:color/black"
@@ -67,24 +80,35 @@
                     app:layout_constraintTop_toBottomOf="@+id/tv_category_detail_news"
                     tools:text="@string/dummy_text_short" />
 
-                <android.support.v7.widget.AppCompatTextView
+                <android.support.v7.widget.CardView
                     android:id="@+id/tv_category_detail_news"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="16dp"
                     app:loadBackgroundCategory="@{detailNews.category}"
-                    android:text="@{detailNews.category}"
+                    app:cardCornerRadius="7dp"
+                    app:contentPaddingRight="8dp"
+                    app:contentPaddingLeft="8dp"
+                    app:contentPaddingBottom="2.5dp"
+                    app:contentPaddingTop="2.5dp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:text="@string/dummy_text_short" />
+                    app:layout_constraintTop_toTopOf="parent">
+                    <android.support.v7.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="Category"
+                        android:textSize="10sp"
+                        android:textColor="@android:color/white"
+                        android:text="@{detailNews.category}"/>
+                </android.support.v7.widget.CardView>
 
                 <ImageView
                     android:id="@+id/imageView2"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="10dp"
                     android:src="@drawable/ic_calender_gray"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tv_title_detail_event" />
@@ -92,7 +116,7 @@
                 <android.support.v7.widget.AppCompatTextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
+                    android:layout_marginStart="10dp"
                     android:layout_marginEnd="16dp"
                     android:text="@{detailNews.date}"
                     app:layout_constraintBottom_toBottomOf="@+id/imageView2"
