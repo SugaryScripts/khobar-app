@@ -8,6 +8,9 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import com.crashlytics.android.Crashlytics
+import com.crashlytics.android.answers.Answers
+import io.fabric.sdk.android.Fabric
 import id.web.muhammadibrahim.khobar.R
 import id.web.muhammadibrahim.khobar.databinding.ActivityMainBinding
 import id.web.muhammadibrahim.khobar.menu.main.adapters.FacultyNDepartmentAdapter
@@ -30,7 +33,7 @@ class MainActivity : AppCompatActivity(), NewsClickListener, EventClickListener,
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        Fabric.with(this, Crashlytics(), Answers())
 
         setupBinding()
         setupToolbar()
