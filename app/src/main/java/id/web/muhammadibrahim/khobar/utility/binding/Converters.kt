@@ -2,8 +2,10 @@ package id.web.muhammadibrahim.khobar.utility.binding
 
 import android.animation.Animator
 import android.databinding.BindingAdapter
+import android.support.v4.content.ContextCompat
 import android.support.v7.widget.AppCompatImageView
 import android.support.v7.widget.AppCompatTextView
+import android.support.v7.widget.CardView
 import android.view.View
 import android.widget.ImageView
 import com.bumptech.glide.GenericTransitionOptions
@@ -33,14 +35,18 @@ class Converters {
 
         @JvmStatic
         @BindingAdapter("loadBackgroundCategory")
-        fun loadBackgroundCategory(textView: AppCompatTextView, category: String) {
-            var background: Int = R.drawable.bg_category_politic_tv
+        fun loadBackgroundCategory(cardView: CardView, category: String) {
             when (category){
-                "Politic" -> background =  R.drawable.bg_category_politic_tv
-                "Education" -> background =  R.drawable.bg_category_education_tv
-                "Economic" -> background = R.drawable.bg_category_economic_tv
+                "Artikel" -> cardView.setCardBackgroundColor(ContextCompat.getColor(cardView.context, R.color.artikel))
+                "Berita-Umum" -> cardView.setCardBackgroundColor(ContextCompat.getColor(cardView.context, R.color.berita_umum))
+                "Info-2" -> cardView.setCardBackgroundColor(ContextCompat.getColor(cardView.context, R.color.info_2))
+                "Informasi-Lembaga-dan-Biro" -> cardView.setCardBackgroundColor(ContextCompat.getColor(cardView.context, R.color.informasi_lembaga_dan_biro))
+                "Informasi-Program-Studi" -> cardView.setCardBackgroundColor(ContextCompat.getColor(cardView.context, R.color.informasi_program_studi))
+                "Informasi-Universitas" -> cardView.setCardBackgroundColor(ContextCompat.getColor(cardView.context, R.color.informasi_universitas))
+                "Journal" -> cardView.setCardBackgroundColor(ContextCompat.getColor(cardView.context, R.color.journal))
+                "News-Ar" -> cardView.setCardBackgroundColor(ContextCompat.getColor(cardView.context, R.color.news_ar))
+                "News-En" -> cardView.setCardBackgroundColor(ContextCompat.getColor(cardView.context, R.color.news_en))
             }
-            textView.background = textView.context.resources.getDrawable(background)
         }
 
         @JvmStatic

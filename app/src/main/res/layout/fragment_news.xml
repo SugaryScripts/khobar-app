@@ -33,21 +33,28 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:riv_corner_radius="10dp" />
 
-                <android.support.v7.widget.AppCompatTextView
-                    android:id="@+id/tv_category_more_news"
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cv_category_more_news"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="6dp"
                     android:layout_marginTop="8dp"
-                    android:paddingStart="3dp"
-                    android:paddingLeft="3dp"
-                    android:paddingEnd="3dp"
-                    android:paddingRight="3dp"
-                    android:textColor="@android:color/white"
-                    android:textSize="10sp"
                     app:layout_constraintStart_toStartOf="@+id/iv_headimage_more_news"
                     app:layout_constraintTop_toBottomOf="@+id/iv_headimage_more_news"
-                    tools:text="category" />
+                    app:cardBackgroundColor="@android:color/holo_orange_light"
+                    app:cardCornerRadius="7dp"
+                    app:contentPaddingRight="8dp"
+                    app:contentPaddingLeft="8dp"
+                    app:contentPaddingBottom="2.5dp"
+                    app:contentPaddingTop="2.5dp">
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/tv_category_more_news"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="10sp"
+                        android:textColor="@android:color/white"
+                        android:text="@string/dummy_text_short"/>
+                </android.support.v7.widget.CardView>
 
                 <android.support.v7.widget.AppCompatTextView
                     android:id="@+id/tv_title_more_news"
@@ -60,8 +67,8 @@
                     android:textColor="@android:color/black"
                     android:textSize="18sp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="@+id/tv_category_more_news"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_category_more_news"
+                    app:layout_constraintStart_toStartOf="@+id/cv_category_more_news"
+                    app:layout_constraintTop_toBottomOf="@+id/cv_category_more_news"
                     tools:text="UNIDA Gontor signs MoU with Khazar University, And become Stick Blaze" />
 
                 <android.support.v7.widget.AppCompatTextView
@@ -71,7 +78,7 @@
                     android:layout_marginTop="8dp"
                     android:textColor="#646464"
                     android:textSize="14sp"
-                    app:layout_constraintStart_toStartOf="@+id/tv_category_more_news"
+                    app:layout_constraintStart_toStartOf="@+id/cv_category_more_news"
                     app:layout_constraintTop_toBottomOf="@+id/tv_title_more_news"
                     tools:text="21 September 2018" />
 

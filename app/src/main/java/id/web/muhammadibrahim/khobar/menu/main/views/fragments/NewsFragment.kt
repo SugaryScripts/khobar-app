@@ -46,7 +46,7 @@ class NewsFragment : Fragment() {
             binding.tvTitleMoreNews.text = it[0].title
             binding.tvDateMoreNews.text = it[0].date
             binding.tvCategoryMoreNews.text = it[0].category
-            Converters.loadBackgroundCategory(binding.tvDateMoreNews,it[0].category)
+            Converters.loadBackgroundCategory(binding.cvCategoryMoreNews, it[0].category)
             adapterNews.setNews(it)
         })
         ((activity as AppCompatActivity) as MainActivity).setupToolbar("News")
