@@ -12,9 +12,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="id.web.muhammadibrahim.khobar.menu.main.views.activities.MainActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:screenOrientation="portrait">
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="735c7dddf8bcee8cb49f4e8a9793076515538cbc" />
+
+        <activity
+            android:name=".menu.main.views.activities.MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

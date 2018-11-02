@@ -2,6 +2,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
+apply plugin: 'io.fabric'
 apply plugin: 'deploygate' // deploy gate
 
 android {
@@ -72,10 +73,12 @@ dependencies {
     kapt "android.arch.lifecycle:compiler:1.1.1"
     implementation "com.github.bumptech.glide:glide:4.8.0"
     kapt "com.github.bumptech.glide:compiler:4.8.0"
-    implementation 'jp.wasabeef:glide-transformations:3.3.0'
-    implementation 'com.github.siyamed:android-shape-imageview:0.9.3'
     implementation 'com.makeramen:roundedimageview:2.3.0'
 
-    implementation 'com.google.firebase:firebase-core:16.0.4'
+    implementation 'com.google.firebase:firebase-core:16.0.4' // Firebase core
+
+    implementation('com.crashlytics.sdk.android:crashlytics:2.9.5@aar') { transitive = true } //Crash Analytic Firebase
+    implementation('com.crashlytics.sdk.android:answers:1.4.2@aar') { transitive = true } //Crash Analytic Firebase
 }
 apply plugin: 'com.google.gms.google-services' // firebase or google signin
+
