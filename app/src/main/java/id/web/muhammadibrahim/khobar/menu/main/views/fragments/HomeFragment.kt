@@ -2,6 +2,7 @@ package id.web.muhammadibrahim.khobar.menu.main.views.fragments
 
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
+import android.content.Intent
 import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -20,6 +21,7 @@ import id.web.muhammadibrahim.khobar.menu.main.adapters.NewsAdapter
 import id.web.muhammadibrahim.khobar.menu.main.viewmodels.FragmentHomeViewModel
 import id.web.muhammadibrahim.khobar.utility.MyDividerItemDecoration
 import id.web.muhammadibrahim.khobar.menu.main.views.activities.MainActivity
+import id.web.muhammadibrahim.khobar.menu.main.views.activities.UniversityActivity
 import kotlinx.android.synthetic.main.layout_home_info.view.*
 
 
@@ -76,7 +78,7 @@ class HomeFragment : Fragment() {
         binding.includeInfoFragHOME.library_info.setOnClickListener { ((activity as AppCompatActivity) as MainActivity).viewmodel.loadFragment(LibraryFragment(),"Library") }
         binding.includeInfoFragHOME.department_info.setOnClickListener { ((activity as AppCompatActivity) as MainActivity).viewmodel.loadFragment(DepartmentFragment(),"Department") }
         binding.includeInfoFragHOME.faculty_info.setOnClickListener { ((activity as AppCompatActivity) as MainActivity).viewmodel.loadFragment(FacultyFragment(),"Faculty") }
-        binding.includeInfoFragHOME.university_info.setOnClickListener { ((activity as AppCompatActivity) as MainActivity).viewmodel.loadFragment(UniversityFragment(),"University") }
+        binding.includeInfoFragHOME.university_info.setOnClickListener { startActivity(Intent(activity,UniversityActivity::class.java)) }
         binding.includeEventFragHOME.tvMoreEventFragHOME.setOnClickListener {
             ((activity as AppCompatActivity) as MainActivity).getBottomNavigation().selectedItemId = R.id.navigation_event
         }

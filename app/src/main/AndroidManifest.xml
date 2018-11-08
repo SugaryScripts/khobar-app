@@ -25,14 +25,53 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            <!-- todo: App links WIP -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:scheme="https"
+                    android:host="gitlab.com" />
+            </intent-filter>
         </activity>
         <activity
-            android:name="id.web.muhammadibrahim.khobar.menu.main.views.activities.DetailEventActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:screenOrientation="portrait"/>
-        <activity android:name="id.web.muhammadibrahim.khobar.menu.main.views.activities.DetailNewsActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:screenOrientation="portrait"/>
+            android:name=".menu.main.views.activities.DetailEventActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".menu.main.views.activities.DetailNewsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".menu.main.views.activities.UniversityActivity"
+            android:parentActivityName=".menu.main.views.activities.MainActivity"
+            android:label="@string/title_activity_university">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="id.web.muhammadibrahim.khobar.menu.main.views.activities.MainActivity" />
+        </activity>
+
+        <!-- University Detail -->
+        <activity android:name=".menu.university.views.activities.RecognitionActivity"
+            android:label="Recognition"/>
+        <activity
+            android:name=".menu.university.views.activities.VisionMissionActivity"
+            android:label="@string/title_activity_vision_mision"/>
+        <activity
+            android:name=".menu.university.views.activities.HistoryActivity"
+            android:label="@string/title_activity_history"/>
+        <activity
+            android:name=".menu.university.views.activities.CharacteristicsActivity"
+            android:label="@string/title_activity_characteristics"/>
+        <activity
+            android:name=".menu.university.views.activities.AboutActivity"
+            android:label="@string/title_activity_about"/>
+        <activity android:name=".menu.university.views.activities.VideoProfileActivity"
+            android:label="Video Profile"/>
     </application>
 
 </manifest>

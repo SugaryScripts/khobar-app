@@ -41,6 +41,7 @@ android {
             minSdkVersion 16
             resValue "string", "app_name", "Khobar"
             //buildConfigField "String", "BASE_URL", "\"https://info-madiun.firebaseapp.com/\""
+            testInstrumentationRunner 'android.support.test.runner.AndroidJUnitRunner'
         }
     }
     dataBinding {
@@ -59,7 +60,7 @@ tasks.whenTaskAdded { task ->
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
@@ -71,14 +72,15 @@ dependencies {
     implementation 'com.android.support:support-v4:28.0.0'
     implementation 'android.arch.lifecycle:extensions:1.1.1'
     kapt "android.arch.lifecycle:compiler:1.1.1"
-    implementation "com.github.bumptech.glide:glide:4.8.0"
+    implementation 'com.github.bumptech.glide:glide:4.8.0'
     kapt "com.github.bumptech.glide:compiler:4.8.0"
     implementation 'com.makeramen:roundedimageview:2.3.0'
-
-    implementation 'com.google.firebase:firebase-core:16.0.4' // Firebase core
-
-    implementation('com.crashlytics.sdk.android:crashlytics:2.9.5@aar') { transitive = true } //Crash Analytic Firebase
-    implementation('com.crashlytics.sdk.android:answers:1.4.2@aar') { transitive = true } //Crash Analytic Firebase
+    implementation 'com.google.firebase:firebase-core:16.0.4'
+    // Firebase core
+    implementation('com.crashlytics.sdk.android:crashlytics:2.9.5@aar') { transitive = true }
+    //Crash Analytic Firebase
+    implementation('com.crashlytics.sdk.android:answers:1.4.2@aar') { transitive = true }
+    //Crash Analytic Firebase
 }
 apply plugin: 'com.google.gms.google-services' // firebase or google signin
 

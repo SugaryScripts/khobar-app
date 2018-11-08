@@ -1,8 +1,10 @@
 package id.web.muhammadibrahim.khobar.menu.main.views.activities
 
+import android.content.Intent
 import android.databinding.DataBindingUtil
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.design.widget.AppBarLayout
 import android.support.design.widget.BottomNavigationView
 import android.util.Log
 import android.view.Menu
@@ -59,6 +61,19 @@ class MainActivity : AppCompatActivity(), NewsAdapter.NewsClickListener, EventAd
             setDisplayHomeAsUpEnabled(!isHome)
             setDisplayShowHomeEnabled(!isHome)
         }
+        /*fragmentManager.beginTransaction()
+            .replace(frame_containter, fragment)
+            .commit()*/
+
+        /*var toolbar = binding.toolbar
+        var params:AppBarLayout.LayoutParams = (toolbar.layoutParams as AppBarLayout.LayoutParams)
+        when (title) {
+            "About" -> params.scrollFlags = AppBarLayout.LayoutParams.SCROLL_FLAG_SCROLL and AppBarLayout.LayoutParams.SCROLL_FLAG_ENTER_ALWAYS_COLLAPSED
+            "Characteristic" -> params.scrollFlags = AppBarLayout.LayoutParams.SCROLL_FLAG_SCROLL and AppBarLayout.LayoutParams.SCROLL_FLAG_ENTER_ALWAYS
+            "History" -> params.scrollFlags = AppBarLayout.LayoutParams.SCROLL_FLAG_SCROLL and AppBarLayout.LayoutParams.SCROLL_FLAG_EXIT_UNTIL_COLLAPSED
+            "Recognition" -> params.scrollFlags = AppBarLayout.LayoutParams.SCROLL_FLAG_SCROLL and AppBarLayout.LayoutParams.SCROLL_FLAG_SNAP
+            "Video Profile" ->params.scrollFlags = AppBarLayout.LayoutParams.SCROLL_FLAG_SCROLL and AppBarLayout.LayoutParams.SCROLL_FLAG_SNAP_MARGINS
+        }*/
     }
 
     private fun setupToolbar() {
