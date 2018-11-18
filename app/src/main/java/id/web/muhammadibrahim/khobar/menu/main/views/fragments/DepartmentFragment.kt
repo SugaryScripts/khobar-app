@@ -23,10 +23,6 @@ import id.web.muhammadibrahim.khobar.utility.MyDividerItemDecoration
 
 class DepartmentFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = FacultyFragment()
-    }
-
     private lateinit var binding: FragmentDepartmentBinding
     private lateinit var viewModelNDepartment: FacultyNDepartmentViewModel
 

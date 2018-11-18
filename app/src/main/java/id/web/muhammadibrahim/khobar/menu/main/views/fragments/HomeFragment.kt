@@ -22,6 +22,8 @@ import id.web.muhammadibrahim.khobar.menu.main.viewmodels.FragmentHomeViewModel
 import id.web.muhammadibrahim.khobar.utility.MyDividerItemDecoration
 import id.web.muhammadibrahim.khobar.menu.main.views.activities.MainActivity
 import id.web.muhammadibrahim.khobar.menu.main.views.activities.UniversityActivity
+import id.web.muhammadibrahim.khobar.menu.main.views.activities.FacultyActivity
+import id.web.muhammadibrahim.khobar.menu.main.views.activities.LibraryActivity
 import kotlinx.android.synthetic.main.layout_home_info.view.*
 
 
@@ -75,9 +77,9 @@ class HomeFragment : Fragment() {
     }
 
     private fun setupClickedView() {
-        binding.includeInfoFragHOME.library_info.setOnClickListener { ((activity as AppCompatActivity) as MainActivity).viewmodel.loadFragment(LibraryFragment(),"Library") }
+        binding.includeInfoFragHOME.library_info.setOnClickListener { startActivity(Intent(activity, LibraryActivity::class.java)) }
         binding.includeInfoFragHOME.department_info.setOnClickListener { ((activity as AppCompatActivity) as MainActivity).viewmodel.loadFragment(DepartmentFragment(),"Department") }
-        binding.includeInfoFragHOME.faculty_info.setOnClickListener { ((activity as AppCompatActivity) as MainActivity).viewmodel.loadFragment(FacultyFragment(),"Faculty") }
+        binding.includeInfoFragHOME.faculty_info.setOnClickListener { startActivity(Intent(activity, FacultyActivity::class.java)) }
         binding.includeInfoFragHOME.university_info.setOnClickListener { startActivity(Intent(activity,UniversityActivity::class.java)) }
         binding.includeEventFragHOME.tvMoreEventFragHOME.setOnClickListener {
             ((activity as AppCompatActivity) as MainActivity).getBottomNavigation().selectedItemId = R.id.navigation_event

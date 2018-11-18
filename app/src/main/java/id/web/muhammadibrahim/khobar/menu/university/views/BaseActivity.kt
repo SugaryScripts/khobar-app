@@ -16,7 +16,7 @@ abstract class BaseActivity : AppCompatActivity() {
         supportActionBar?.apply {
             setDisplayHomeAsUpEnabled(true)
             setDisplayShowHomeEnabled(true)
-            setDisplayShowTitleEnabled(true)
+            setDisplayShowTitleEnabled(false)
             setHomeAsUpIndicator(R.drawable.ic_left_balck)
         }
     }

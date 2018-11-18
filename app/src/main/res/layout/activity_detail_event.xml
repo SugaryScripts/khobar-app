@@ -69,7 +69,7 @@
                 android:layout_height="match_parent">
 
                 <android.support.v7.widget.AppCompatTextView
-                    android:id="@+id/tv_title_detail_event"
+                    android:id="@+id/tv_title_book_DetailBook"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
@@ -89,8 +89,8 @@
                     android:layout_height="24dp"
                     android:layout_marginTop="16dp"
                     android:src="@drawable/ic_time_gray"
-                    app:layout_constraintStart_toStartOf="@+id/tv_title_detail_event"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_title_detail_event" />
+                    app:layout_constraintStart_toStartOf="@+id/tv_title_book_DetailBook"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_title_book_DetailBook" />
 
                 <android.support.v7.widget.AppCompatTextView
                     android:id="@+id/appCompatTextView2"

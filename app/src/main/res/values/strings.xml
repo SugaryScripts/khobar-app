@@ -1,5 +1,6 @@
 <resources>
-    <!--layout-->
+    <!--main-->
+    <string name="title_activity_faculty">FacultyActivity</string>
     <string name="department">Department</string>
     <string name="library">Library</string>
     <string name="university">University</string>
@@ -46,4 +47,21 @@ Ea nonumy senserit ius, te esse soleat suavitate pri. Numquam invidunt inimicus 
 
     <!-- University -->
     <string name="university_recognition_desc">The degrees conferred by UNIDA Gontor are recognized by universities in the country and abroad, such as:</string>
+    <string name="title_activity_education">EducationActivity</string>
+    <string name="title_activity_islamic_education">IslamicEducationActivity</string>
+
+    <!-- Faculty -->
+    <string name="label_nidn">NIDN</string>
+    <string name="label_niy">NIY</string>
+    <string name="label_double_dot">:</string>
+
+    <!--Field Table on Detail Book-->
+    <string name="book_field_edition">Edition</string>
+    <string name="book_field_isbn">ISBN/ISSN</string>
+    <string name="book_field_publisher">Publisher</string>
+    <string name="book_field_place">Place</string>
+    <string name="book_field_year">Year</string>
+    <string name="book_field_classification">Classification</string>
+    <string name="book_field_call_number">Call Number</string>
+    <string name="book_field_collection">Collaction</string>
 </resources>

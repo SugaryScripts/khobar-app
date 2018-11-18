@@ -6,16 +6,16 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import id.web.muhammadibrahim.khobar.R
 import id.web.muhammadibrahim.khobar.databinding.ItemLibraryBinding
-import id.web.muhammadibrahim.khobar.menu.main.models.LibraryModel
-import id.web.muhammadibrahim.khobar.menu.main.viewmodels.ItemLibraryViewModel
+import id.web.muhammadibrahim.khobar.menu.main.models.BookModel
+import id.web.muhammadibrahim.khobar.menu.main.viewmodels.ItemBookViewModel
 
 class LibraryAdapter(private val bookClickListener: BookClickListener):
     RecyclerView.Adapter<LibraryAdapter.LibraryViewHolder>() {
-    private val dataset: MutableList<LibraryModel> = mutableListOf()
+    private val dataset: MutableList<BookModel> = mutableListOf()
 
     inner class LibraryViewHolder(private val bindings: ItemLibraryBinding) : RecyclerView.ViewHolder(bindings.root) {
-        fun bind(item: LibraryModel, clickListener: BookClickListener) = with(bindings) {
-            val binds = ItemLibraryViewModel(item)
+        fun bind(item: BookModel, clickListener: BookClickListener) = with(bindings) {
+            val binds = ItemBookViewModel(item)
             bindings.book = binds
             bindings.executePendingBindings()
 
@@ -34,15 +34,15 @@ class LibraryAdapter(private val bookClickListener: BookClickListener):
 
     override fun getItemCount() = dataset.size
 
-    fun setBooks(libraryModel: MutableList<LibraryModel>?) {
+    fun setBooks(bookModel: MutableList<BookModel>?) {
         dataset.apply {
             clear()
-            addAll(libraryModel!!)
+            addAll(bookModel!!)
         }
         notifyDataSetChanged()
     }
 
     interface BookClickListener{
-        fun onClickBook(model: LibraryModel)
+        fun onClickBook(model: BookModel)
     }
 }

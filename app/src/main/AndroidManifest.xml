@@ -33,8 +33,8 @@
                 <category android:name="android.intent.category.BROWSABLE" />
 
                 <data
-                    android:scheme="https"
-                    android:host="gitlab.com" />
+                    android:host="gitlab.com"
+                    android:scheme="https" />
             </intent-filter>
         </activity>
         <activity
@@ -45,33 +45,50 @@
             android:name=".menu.main.views.activities.DetailNewsActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity
             android:name=".menu.main.views.activities.UniversityActivity"
-            android:parentActivityName=".menu.main.views.activities.MainActivity"
-            android:label="@string/title_activity_university">
+            android:label="@string/title_activity_university"
+            android:parentActivityName=".menu.main.views.activities.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="id.web.muhammadibrahim.khobar.menu.main.views.activities.MainActivity" />
         </activity>
 
         <!-- University Detail -->
-        <activity android:name=".menu.university.views.activities.RecognitionActivity"
-            android:label="Recognition"/>
+        <activity
+            android:name=".menu.university.views.activities.RecognitionActivity"
+            android:label="Recognition" />
         <activity
             android:name=".menu.university.views.activities.VisionMissionActivity"
-            android:label="@string/title_activity_vision_mision"/>
+            android:label="@string/title_activity_vision_mision" />
         <activity
             android:name=".menu.university.views.activities.HistoryActivity"
-            android:label="@string/title_activity_history"/>
+            android:label="@string/title_activity_history" />
         <activity
             android:name=".menu.university.views.activities.CharacteristicsActivity"
-            android:label="@string/title_activity_characteristics"/>
+            android:label="@string/title_activity_characteristics" />
         <activity
             android:name=".menu.university.views.activities.AboutActivity"
-            android:label="@string/title_activity_about"/>
-        <activity android:name=".menu.university.views.activities.VideoProfileActivity"
-            android:label="Video Profile"/>
+            android:label="@string/title_activity_about" />
+        <activity
+            android:name=".menu.university.views.activities.VideoProfileActivity"
+            android:label="Video Profile" />
+        <activity
+            android:name=".menu.main.views.activities.FacultyActivity"
+            android:label="@string/title_activity_faculty"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".menu.faculty.views.activities.EducationActivity"
+            android:label="@string/title_activity_education"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".menu.department.views.activities.IslamicEducationActivity"
+            android:label="@string/title_activity_islamic_education"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".menu.main.views.activities.LibraryActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".menu.main.views.activities.DetailBookActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 </manifest>
