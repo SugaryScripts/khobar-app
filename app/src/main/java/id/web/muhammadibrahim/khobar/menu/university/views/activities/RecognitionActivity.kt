@@ -10,9 +10,8 @@ import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
 import id.web.muhammadibrahim.khobar.R
 import id.web.muhammadibrahim.khobar.databinding.ActivityUniversityRecognitionBinding
-import id.web.muhammadibrahim.khobar.menu.university.adapter.RecognitionAdapter
+import id.web.muhammadibrahim.khobar.menu.university.adapters.RecognitionAdapter
 import id.web.muhammadibrahim.khobar.menu.university.models.RecognitionModel
-import id.web.muhammadibrahim.khobar.menu.university.viewmodels.ItemRecognitionViewModel
 import id.web.muhammadibrahim.khobar.utility.MyDividerItemDecoration
 import id.web.muhammadibrahim.khobar.menu.university.viewmodels.RecognitionViewModel
 

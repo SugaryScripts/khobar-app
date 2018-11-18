@@ -4,7 +4,6 @@ import android.content.Intent
 import android.databinding.DataBindingUtil
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.design.widget.AppBarLayout
 import android.support.design.widget.BottomNavigationView
 import android.util.Log
 import android.view.Menu
@@ -15,20 +14,22 @@ import com.crashlytics.android.answers.Answers
 import io.fabric.sdk.android.Fabric
 import id.web.muhammadibrahim.khobar.R
 import id.web.muhammadibrahim.khobar.databinding.ActivityMainBinding
+import id.web.muhammadibrahim.khobar.menu.department.views.activities.IslamicEducationActivity
+import id.web.muhammadibrahim.khobar.menu.faculty.views.activities.EducationActivity
 import id.web.muhammadibrahim.khobar.menu.main.adapters.EventAdapter
 import id.web.muhammadibrahim.khobar.menu.main.adapters.FacultyNDepartmentAdapter
 import id.web.muhammadibrahim.khobar.menu.main.adapters.LibraryAdapter
 import id.web.muhammadibrahim.khobar.menu.main.adapters.NewsAdapter
 import id.web.muhammadibrahim.khobar.menu.main.models.EventModel
 import id.web.muhammadibrahim.khobar.menu.main.models.FacultyNDepartmentModel
-import id.web.muhammadibrahim.khobar.menu.main.models.LibraryModel
+import id.web.muhammadibrahim.khobar.menu.main.models.BookModel
 import id.web.muhammadibrahim.khobar.menu.main.models.NewsModel
 import id.web.muhammadibrahim.khobar.menu.main.viewmodels.MainViewModel
 import id.web.muhammadibrahim.khobar.menu.main.views.fragments.EventFragment
 import id.web.muhammadibrahim.khobar.menu.main.views.fragments.HomeFragment
 import id.web.muhammadibrahim.khobar.menu.main.views.fragments.NewsFragment
 
-class MainActivity : AppCompatActivity(), NewsAdapter.NewsClickListener, EventAdapter.EventClickListener, FacultyNDepartmentAdapter.FacultyDepartmentClickListener, LibraryAdapter.BookClickListener {
+class MainActivity : AppCompatActivity(), NewsAdapter.NewsClickListener, EventAdapter.EventClickListener, FacultyNDepartmentAdapter.FacultyDepartmentClickListener {
 
     private lateinit var binding: ActivityMainBinding
     lateinit var viewmodel: MainViewModel
@@ -125,11 +126,8 @@ class MainActivity : AppCompatActivity(), NewsAdapter.NewsClickListener, EventAd
     }
 
     override fun onClickFacultyDepartmentItem(model: FacultyNDepartmentModel) {
-        Log.i("(^_^)","Clicked faculty or department item")
-    }
-
-    override fun onClickBook(model: LibraryModel) {
-        Log.i("(^_^)","Clicked book item")
+        if (model.title == "Education") startActivity(Intent(this, EducationActivity::class.java))
+        if (model.title == "Islamic Education") startActivity(Intent(this, IslamicEducationActivity::class.java))
     }
 
     override fun onBackPressed() {

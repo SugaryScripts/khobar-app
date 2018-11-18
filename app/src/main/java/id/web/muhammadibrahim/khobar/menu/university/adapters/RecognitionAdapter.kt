@@ -1,4 +1,4 @@
-package id.web.muhammadibrahim.khobar.menu.university.adapter
+package id.web.muhammadibrahim.khobar.menu.university.adapters
 
 import android.databinding.DataBindingUtil
 import android.support.v7.widget.RecyclerView
