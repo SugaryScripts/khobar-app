@@ -85,9 +85,13 @@
             android:name=".menu.department.views.activities.IslamicEducationActivity"
             android:label="@string/title_activity_islamic_education"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".menu.main.views.activities.LibraryActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".menu.main.views.activities.DetailBookActivity"
+        <activity
+            android:name=".menu.main.views.activities.LibraryActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".menu.main.views.activities.DetailBookActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".menu.main.views.activities.DepartmentActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 

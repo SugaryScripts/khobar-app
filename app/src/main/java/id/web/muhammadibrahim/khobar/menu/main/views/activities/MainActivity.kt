@@ -29,7 +29,7 @@ import id.web.muhammadibrahim.khobar.menu.main.views.fragments.EventFragment
 import id.web.muhammadibrahim.khobar.menu.main.views.fragments.HomeFragment
 import id.web.muhammadibrahim.khobar.menu.main.views.fragments.NewsFragment
 
-class MainActivity : AppCompatActivity(), NewsAdapter.NewsClickListener, EventAdapter.EventClickListener, FacultyNDepartmentAdapter.FacultyDepartmentClickListener {
+class MainActivity : AppCompatActivity(), NewsAdapter.NewsClickListener, EventAdapter.EventClickListener {
 
     private lateinit var binding: ActivityMainBinding
     lateinit var viewmodel: MainViewModel
@@ -123,11 +123,6 @@ class MainActivity : AppCompatActivity(), NewsAdapter.NewsClickListener, EventAd
 
     override fun onClickEvent(eventModel: EventModel) {
         startActivity(DetailEventActivity.newIntent(this,eventModel))
-    }
-
-    override fun onClickFacultyDepartmentItem(model: FacultyNDepartmentModel) {
-        if (model.title == "Education") startActivity(Intent(this, EducationActivity::class.java))
-        if (model.title == "Islamic Education") startActivity(Intent(this, IslamicEducationActivity::class.java))
     }
 
     override fun onBackPressed() {
