@@ -20,22 +20,6 @@
             android:name=".menu.main.views.activities.MainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-            <!-- todo: App links WIP -->
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-
-                <data
-                    android:host="gitlab.com"
-                    android:scheme="https" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".menu.main.views.activities.DetailEventActivity"
@@ -91,8 +75,28 @@
         <activity
             android:name=".menu.main.views.activities.DetailBookActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".menu.main.views.activities.DepartmentActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".menu.main.views.activities.DepartmentActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".menu.main.views.activities.SplashScreenActivity"
+            android:theme="@style/AppTheme.NoActionBar.Fullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <!-- todo: App links WIP -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="gitlab.com"
+                    android:scheme="https" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
