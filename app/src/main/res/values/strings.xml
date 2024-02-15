@@ -1,0 +1,67 @@
+<resources>
+    <!--main-->
+    <string name="title_activity_faculty">FacultyActivity</string>
+    <string name="department">Department</string>
+    <string name="library">Library</string>
+    <string name="university">University</string>
+    <string name="faculty">Faculty</string>
+    <string name="event">Event</string>
+    <string name="news">News</string>
+    <string name="more">More</string>
+
+    <string name="title_menu_home">Home</string>
+    <string name="title_menu_event">Event</string>
+    <string name="title_menu_news">News</string>
+
+    <string name="title_activity_more_event">Event</string>
+    <string name="title_activity_more_news">News</string>
+
+    <!-- dummy -->
+    <string name="dummy_image">https://images.wallpaperscraft.com/image/neko_yanshoujie_room_girl_graphic_hand_headphones_easel_shape_books_food_camera_lamp_chair_decor_94921_1920x1080.jpg</string>
+    <string name="dummy_text_short">Lorem ipsum dolor sit amet</string>
+    <string name="dummy_text_long">Lorem ipsum dolor sit amet, an veri quas omnium mel, cu dicit populo platonem est. Id qui atqui dolorum evertitur, cum at melius deleniti urbanitas. Ea eruditi debitis adolescens nec, sea no deseruisse deterruisset. Nam probo elitr pericula ea, eos no nulla invenire senserit. Nec atqui laudem deleniti ne, sea te duis fierent, ad partiendo deseruisse his. Alienum aliquando pri ei.
+
+Vis fuisset pericula an. Quo aliquid referrentur cu, pri in oratio legendos sapientem. Per platonem rationibus in, impetus maluisset definitionem cum id. An regione accumsan scriptorem mea, id officiis pertinax liberavisse eum. Ei nobis voluptatum temporibus nec, offendit reprehendunt per id. Clita ubique in vel, eum id prima latine scribentur.
+
+His ex sonet animal, no per suscipit vituperatoribus, his ea sint mucius equidem. Eos cu viderer oblique omittantur, his euismod senserit eu. Falli mandamus definitionem an his, inimicus scriptorem sit at, legere copiosae democritum pri eu. Ei est quod quas praesent, dicat scriptorem sea ut, quo esse utinam eligendi ad. Ubique principes eu nec, vidisse dolorem dissentiet eam eu. Sapientem adolescens efficiendi quo in, vim te facete albucius abhorreant, odio viris accusata vel eu.
+
+Vero deterruisset definitionem usu ex, ad propriae quaerendum qui. Mei gloriatur neglegentur te, ut quo clita scribentur accommodare, sed no saperet argumentum. Tota albucius prodesset ex vix, eam illud clita te. Eius atqui ubique mea ei, ea eos alterum facilis erroribus.
+
+Putant fuisset invidunt ea cum, intellegat inciderint eam an. Pro id nibh scaevola praesent, ei mea homero bonorum ornatus. Sed velit aperiam perpetua ea, te animal regione sed, mea cu postea abhorreant contentiones. His an dicam altera percipit, cu qui rebum mundi dicam. Eum an graeci ceteros consequuntur, sea cu nullam lucilius deseruisse.
+
+At nihil audire laoreet mei. Te quo ubique aliquam ponderum. Scaevola suavitate ad mea, augue fabulas ne est. Cu vix quem dolore. No homero partem per, vel eros legimus percipit no.
+
+Iudico honestatis ut eum, ad est sonet quodsi scriptorem. Has ullum adversarium an. Nam an laudem fabulas intellegebat, ut omnesque perfecto dissentias eum. Erat apeirian no vel, blandit incorrupte has ut, ea vis liber nominavi scaevola. Te ius modus everti, no simul quidam praesent duo.
+
+In putant lobortis accommodare pri, vix labores dolores consequat ea. Est ex luptatum vituperatoribus, has id eirmod reprimique, in gloriatur adversarium qui. Ei vix simul tractatos. Stet accusam id sea, ex qui ancillae splendide cotidieque, consul corpora iracundia duo no. Probo possit habemus ut quo, duo utroque ancillae eu, pri harum tibique eu. Ea debet consul eligendi mei.
+
+Ea nonumy senserit ius, te esse soleat suavitate pri. Numquam invidunt inimicus est.</string>
+    <string name="title_activity_vision_mision">VisionMisionActivity</string>
+    <string name="title_activity_history">HistoryActivity</string>
+    <string name="title_activity_characteristics">CharacteristicsActivity</string>
+    <string name="title_activity_about">AboutActivity</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_university">UniversityActivity</string>
+
+    <!-- University -->
+    <string name="university_recognition_desc">The degrees conferred by UNIDA Gontor are recognized by universities in the country and abroad, such as:</string>
+    <string name="title_activity_education">EducationActivity</string>
+    <string name="title_activity_islamic_education">IslamicEducationActivity</string>
+
+    <!-- Faculty -->
+    <string name="label_nidn">NIDN</string>
+    <string name="label_niy">NIY</string>
+    <string name="label_double_dot">:</string>
+
+    <!--Field Table on Detail Book-->
+    <string name="book_field_edition">Edition</string>
+    <string name="book_field_isbn">ISBN/ISSN</string>
+    <string name="book_field_publisher">Publisher</string>
+    <string name="book_field_place">Place</string>
+    <string name="book_field_year">Year</string>
+    <string name="book_field_classification">Classification</string>
+    <string name="book_field_call_number">Call Number</string>
+    <string name="book_field_collection">Collaction</string>
+</resources>

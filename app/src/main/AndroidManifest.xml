@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="id.web.muhammadibrahim.khobar"
+    android:installLocation="preferExternal">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="735c7dddf8bcee8cb49f4e8a9793076515538cbc" />
+
+        <activity
+            android:name=".menu.main.views.activities.MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name=".menu.main.views.activities.DetailEventActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".menu.main.views.activities.DetailNewsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".menu.main.views.activities.UniversityActivity"
+            android:label="@string/title_activity_university"
+            android:parentActivityName=".menu.main.views.activities.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="id.web.muhammadibrahim.khobar.menu.main.views.activities.MainActivity" />
+        </activity>
+
+        <!-- University Detail -->
+        <activity
+            android:name=".menu.university.views.activities.RecognitionActivity"
+            android:label="Recognition" />
+        <activity
+            android:name=".menu.university.views.activities.VisionMissionActivity"
+            android:label="@string/title_activity_vision_mision" />
+        <activity
+            android:name=".menu.university.views.activities.HistoryActivity"
+            android:label="@string/title_activity_history" />
+        <activity
+            android:name=".menu.university.views.activities.CharacteristicsActivity"
+            android:label="@string/title_activity_characteristics" />
+        <activity
+            android:name=".menu.university.views.activities.AboutActivity"
+            android:label="@string/title_activity_about" />
+        <activity
+            android:name=".menu.university.views.activities.VideoProfileActivity"
+            android:label="Video Profile" />
+        <activity
+            android:name=".menu.main.views.activities.FacultyActivity"
+            android:label="@string/title_activity_faculty"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".menu.faculty.views.activities.EducationActivity"
+            android:label="@string/title_activity_education"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".menu.department.views.activities.IslamicEducationActivity"
+            android:label="@string/title_activity_islamic_education"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".menu.main.views.activities.LibraryActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".menu.main.views.activities.DetailBookActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".menu.main.views.activities.DepartmentActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".menu.main.views.activities.SplashScreenActivity"
+            android:theme="@style/AppTheme.NoActionBar.Fullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <!-- todo: App links WIP -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="gitlab.com"
+                    android:scheme="https" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

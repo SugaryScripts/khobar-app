@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- main color -->
+    <color name="colorPrimary">#5cbcfd</color>
+    <color name="colorPrimaryDark">#008cca</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorBackgroundActivity">#F6F6F6</color>
+
+    <!-- color navigation -->
+    <color name="background_navigation">#F6F6F6</color>
+    <color name="active_menu_navigation">#007AFF</color>
+    <color name="deactive_menu_navigation">#7E7E7E</color>
+
+    <!-- category -->
+    <color name="artikel">#d32f2f</color>
+    <color name="berita_umum">#ad1457</color>
+    <color name="info_2">#546e7a</color>
+    <color name="informasi_lembaga_dan_biro">#1976d2</color>
+    <color name="informasi_program_studi">#00bfa5</color>
+    <color name="informasi_universitas">#9e9d24</color>
+    <color name="journal">#5d4037</color>
+    <color name="news_ar">#006064</color>
+    <color name="news_en">#ec407a</color>
+</resources>

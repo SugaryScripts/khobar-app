@@ -1,0 +1,86 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'io.fabric'
+apply plugin: 'deploygate' // deploy gate
+
+android {
+    signingConfigs {
+        config {
+            keyAlias 'khobar'
+            keyPassword 'unida2019'
+            storeFile file('../khobar-key.jks')
+            storePassword 'unida2019'
+        }
+    }
+    compileSdkVersion 28
+    defaultConfig {
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+        }
+    }
+    flavorDimensions "default"
+    productFlavors {
+        development {
+            applicationId "id.web.muhammadibrahim.khobardev"
+            minSdkVersion 22
+            resValue "string", "app_name", "Khobar dev"
+            //buildConfigField "String", "BASE_URL", "\"http:192.168.1.3:1000/\""
+        }
+        production {
+            applicationId "id.web.muhammadibrahim.khobar"
+            minSdkVersion 16
+            resValue "string", "app_name", "Khobar"
+            //buildConfigField "String", "BASE_URL", "\"https://info-madiun.firebaseapp.com/\""
+            testInstrumentationRunner 'android.support.test.runner.AndroidJUnitRunner'
+        }
+    }
+    dataBinding {
+        enabled = true
+    }
+}
+androidExtensions { // enabled parcelable
+    experimental = true
+}
+tasks.whenTaskAdded { task ->
+    if (task.name == "assembleDevelopmentDebug" || task.name == "generateDevelopmentDebugSources") {
+        task.doLast {
+            ['paplay', '/usr/share/sounds/freedesktop/stereo/complete.oga'].execute()
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    // ui
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation 'com.android.support:design:28.0.0'
+    implementation 'com.android.support:support-v4:28.0.0'
+    implementation 'android.arch.lifecycle:extensions:1.1.1'
+    kapt "android.arch.lifecycle:compiler:1.1.1"
+    implementation 'com.github.bumptech.glide:glide:4.8.0'
+    kapt "com.github.bumptech.glide:compiler:4.8.0"
+    implementation 'com.makeramen:roundedimageview:2.3.0'
+    implementation 'com.google.firebase:firebase-core:16.0.4'
+    // Firebase core
+    implementation('com.crashlytics.sdk.android:crashlytics:2.9.5@aar') { transitive = true }
+    //Crash Analytic Firebase
+    implementation('com.crashlytics.sdk.android:answers:1.4.2@aar') { transitive = true }
+    //Crash Analytic Firebase
+}
+apply plugin: 'com.google.gms.google-services' // firebase or google signin
+

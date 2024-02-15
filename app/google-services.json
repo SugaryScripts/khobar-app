@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "434903104467",
+    "firebase_url": "https://khobar-unida-gontor.firebaseio.com",
+    "project_id": "khobar-unida-gontor",
+    "storage_bucket": "khobar-unida-gontor.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:434903104467:android:e05a1ac334752711",
+        "android_client_info": {
+          "package_name": "id.web.muhammadibrahim.khobar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "434903104467-lj9lcj3e4kda87n8tkrfsl1rm65p2qrm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "id.web.muhammadibrahim.khobar",
+            "certificate_hash": "6622f10fe298cb882bab922eacbb18cb27de1bf0"
+          }
+        },
+        {
+          "client_id": "434903104467-lpdap1afrg1ehkgos57ko187hkii3fqp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBEbaw4kDmJHgAd686K0YDUUHzP7ipMu04"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "434903104467-lpdap1afrg1ehkgos57ko187hkii3fqp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
